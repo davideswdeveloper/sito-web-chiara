@@ -13,5 +13,5 @@ import { CookieConsentComponent } from './components/cookie-consent/cookie-conse
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Dott. Maria Pia Raso - Nutrizionista Roma';
+  title = 'Dott.ssa Chiara Del Re - Dermatologa Roma';
 }

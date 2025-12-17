@@ -2,17 +2,18 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #e57373;      /* Colore principale (es. cuore, bottoni) */
-  --accent-color: #81c784;       /* Colore accento (es. foglia, link) */
-  --accent-color-2: var(--accent-color); /* Clone per gradienti/CTA */
-  --accent-color-3: #a5d6a7;     /* Terza variante verde (più soft) */
-  --secondary-color: #ffd166;    /* Secondario */
+  /* Palette rosa polverosa per Chiara Del Re (Dermatologa) */
+  --primary-color: #B86A6A;      /* Rosa malva intenso – bottoni e accenti principali */
+  --accent-color: #D6949D;       /* Rosa medio per link e hover */
+  --accent-color-2: #E7A9B5;     /* Variante più chiara per gradienti/CTA */
+  --accent-color-3: #F5C6D3;     /* Rosa chiarissimo per sfondi morbidi */
+  --secondary-color: #A05C66;    /* Tonalità più scura per dettagli e contrasti */
   --background-color: #f9f9f9;   /* Sfondo principale */
-  --surface-color: #f7f7f7;      /* Card, box, navbar */
+  --surface-color: #fdf7f8;      /* Card, box, navbar */
   --white: #fff;                 /* Bianco */
   --black: #000;                 /* Nero */
   --text-color: #4A4A4A;         /* Testo principale (grigio scuro) */
-  --text-secondary: #bdbdbd;     /* Testo secondario */
+  --text-secondary: #b37c86;     /* Testo secondario */
   --border-color: #444444;       /* Bordo elementi */
   --button-text: #fff;           /* Testo bottoni */
   --success-color: #28a745;
@@ -351,7 +352,7 @@ a:hover {
     top: 100%;
     left: 0;
     width: 100%;
-    background: linear-gradient(135deg, #4f7763 0%, #6b9080 100%);
+    background: linear-gradient(135deg, #A05C66 0%, #B86A6A 50%, #D6949D 100%);
     padding: 1rem 0;
     box-shadow: 0 4px 15px rgba(79, 119, 99, 0.3);
     flex-direction: column;

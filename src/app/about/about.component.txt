@@ -23,7 +23,7 @@
             <div class="content-container">
                 <div class="text-content">
                     <h2>Chi sono</h2>
-                    <p>Sono la <strong>Dottoressa Maria Pia Raso</strong>, biologa nutrizionista con la passione per un'alimentazione consapevole. Credo che il cibo sia medicina per il corpo e nutrimento per lo spirito.</p>
+                    <p>Sono la <strong>Dottoressa Chiara Del Re</strong>, Dermatologa, con la passione per la salute e la bellezza della pelle. Credo che ogni persona meriti un percorso di cura personalizzato e rispettoso della propria unicità.</p>
                 </div>
                 <div class="image-content">
                     <div class="image-blob blob-shape-1">

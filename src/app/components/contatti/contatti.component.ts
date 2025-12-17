@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 export class ContattiComponent {
 
   prenotaVisita() {
-    window.open('https://www.miodottore.it/maria-pia-raso/nutrizionista/roma', '_blank');
+    window.open('https://www.miodottore.it/', '_blank');
   }
 
 
@@ -43,7 +43,7 @@ export class ContattiComponent {
   portamiQui(sede: string) {
     if (sede === 'online') {
       // Per le consulenze online, apri il link di prenotazione
-      window.open('https://www.miodottore.it/maria-pia-raso/nutrizionista/roma', '_blank');
+      window.open('https://www.miodottore.it/', '_blank');
     } else {
       // Per le sedi fisiche, apri Google Maps con l'indirizzo
       const encodedAddress = encodeURIComponent(sede);
