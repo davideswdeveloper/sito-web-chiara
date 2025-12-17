@@ -1,0 +1,183 @@
+<section class="hero">
+  <div class="hero-text">
+    <!-- Testo fisso -->
+    <h1 class="static-part">Il tuo percorso verso</h1>
+
+    <!-- Parte dinamica: articolo + parola -->
+    <h1 class="dynamic-part">
+      <span class="article">{{ current.articolo }}</span>
+      @if(current.articolo === 'la' || current.articolo === 'il'){
+      <span class="highlight rotating-word">&nbsp;{{ current.parola }}</span>
+      }@else{
+        <span class="highlight rotating-word"> {{ current.parola }}</span>
+
+      }
+    </h1>
+
+    <!-- Testo fisso finale -->
+    <h1 class="static-part">inizia qui.</h1>
+  
+
+
+    
+    <p>
+      Scopri come un'alimentazione sana e personalizzata può trasformare la tua vita. 
+      <br>Sono qui per guidarti, passo dopo passo.
+    </p>
+    <button class="cta" onclick="document.getElementById('servizi_con_foto').scrollIntoView({ behavior: 'smooth' })">
+      Scopri i Servizi
+    </button>
+      </div>
+
+  
+
+  <div class="hero-image">
+    <img src="assets/images/pia-removebg-preview.png " alt="Hero Image">
+  </div>
+
+
+
+
+
+
+
+  
+ 
+</section>
+<div class="custom-shape-divider-bottom-1751296690">
+  <svg data-name="Layer 1"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+  </svg>
+</div>
+
+
+
+<section class="services-intro" id="servizi_con_foto">
+  <h2>I Miei Servizi</h2>
+  <p>
+    Offro una gamma completa di servizi nutrizionali per aiutarti a raggiungere i tuoi 
+    obiettivi di salute e benessere, qualunque essi siano.
+  </p>
+</section>
+
+<section class="features" >
+  <!-- Educazione alimentare -->
+  <div class="feature-row">
+    <div class="feature-img">
+      <div class="image-blob blob-shape-3">
+        <img src="assets/images/educazione.png" alt="Educazione alimentare">
+      </div>
+    </div>
+    <div class="feature-text">
+      <h2>Educazione alimentare</h2>
+      <p>Imparare a nutrirsi in modo consapevole è la base per uno stile di vita sano e duraturo. Offro consigli pratici ed informazioni scientifiche per aiutarti a fare scelte alimentari equilibrate, sostenibili e personalizzate, migliorando il rapporto con il cibo.</p>
+    </div>
+  </div>
+
+  <!-- Dieta per disturbi metabolici -->
+  <div class="feature-row reverse">
+    <div class="feature-img">
+      <div class="image-blob blob-shape-2">
+        <img src="assets/images/metabolici.png" alt="Dieta per disturbi metabolici">
+      </div>
+    </div>
+    <div class="feature-text">
+      <h2>Piano Nutrizionale Personalizzato per Disturbi Metabolici</h2>
+      <p>Un'alimentazione mirata può fare la differenza nella gestione di disturbi come insulino-resistenza, diabete, ipercolesterolemia e sindrome metabolica. Offro percorsi nutrizionali personalizzati, basati su evidenze scientifiche, per aiutarti a migliorare i parametri metabolici, prevenire complicanze e ritrovare equilibrio e benessere.</p>
+    </div>
+  </div>
+
+  <!-- Dieta per disturbi gastrointestinali -->
+  <div class="feature-row">
+    <div class="feature-img">
+      <div class="image-blob blob-shape-1">
+        <img src="assets/images/gastrointestinale.png" alt="Dieta per disturbi gastrointestinali">
+      </div>
+    </div>
+    <div class="feature-text">
+      <h2>Piano Nutrizionale Personalizzato per Disturbi Gastrointestinali</h2>
+      <p>Alimentazione e salute intestinale sono strettamente collegate, perciò mi occupo di piani alimentari personalizzati per gestire disturbi come colon irritabile, reflusso gastroesofageo, gonfiore addominale, stipsi e intolleranze alimentari. L’obiettivo è ridurre i sintomi, migliorare la digestione e ritrovare il benessere quotidiano.</p>
+    </div>
+  </div>
+
+  <!-- Dieta in gravidanza -->
+  <div class="feature-row reverse">
+    <div class="feature-img">
+      <div class="image-blob blob-shape-4">
+        <img src="assets/images/gravidanza.png" alt="Dieta in gravidanza">
+      </div>
+    </div>
+    <div class="feature-text">
+      <h2>Piano Nutrizionale Personalizzato per la Gravidanza</h2>
+      <p>Un'alimentazione equilibrata in gravidanza è fondamentale, perciò ti accompagno nella scelta dei nutrienti essenziali, con piani alimentari personalizzati in base alle tue esigenze, al trimestre e ad eventuali disturbi (nausea, stipsi, diabete gestazionale). L'obiettivo è favorire una gravidanza serena, supportando la tua salute e quella del tuo bambino, passo dopo passo.</p>
+    </div>
+  </div>
+
+  <!-- Dieta chetogenica -->
+  <div class="feature-row">
+    <div class="feature-img">
+      <div class="image-blob blob-shape-1">
+        <img src="assets/images/chetogenica.png" alt="Dieta chetogenica">
+      </div>
+    </div>
+    <div class="feature-text">
+      <h2>Dieta Chetogenica</h2>
+      <p>Questo regime alimentare non è solo una strategia per la perdita di peso, ma può essere un valido alleato per migliorare la gestione di alcune patologie, come l'insulino-resistenza ed il diabete di tipo 2, o come supporto in ambito terapeutico. Propongo percorsi personalizzati e supervisionati per affrontare il percorso chetogenico in modo sicuro, efficace ed adatto al tuo stile di vita</p>
+    </div>
+  </div>
+
+  <!-- Dieta vegetariana -->
+  <div class="feature-row reverse">
+    <div class="feature-img">
+      <div class="image-blob blob-shape-2">
+        <img src="assets/images/vegetariana.png" alt="Dieta vegetariana">
+      </div>
+    </div>
+    <div class="feature-text">
+      <h2>Piano Nutrizionale Personalizzato Vegetariano</h2>
+      <p>Seguire un’alimentazione vegetariana in modo equilibrato richiede attenzione e consapevolezza, perciò ti proporrò un piano alimentare completo, bilanciato e personalizzato, che rispetti le tue scelte e garantisca il giusto apporto di tutti i nutrienti essenziali.</p>
+    </div>
+  </div>
+
+  <!-- Dieta vegana -->
+  <div class="feature-row">
+    <div class="feature-img">
+      <div class="image-blob blob-shape-3">
+        <img src="assets/images/vegana.png" alt="Dieta vegana">
+      </div>
+    </div>
+    <div class="feature-text">
+      <h2>Piano Nutrizionale Personalizzato Vegano</h2>
+      <p>Ti accompagno nella scelta di alimenti nutrienti e completi, per garantire un apporto bilanciato di tutti i nutrienti, rispettando le tue scelte e promuovendo il benessere a lungo termine.</p>
+    </div>
+  </div>
+
+  <!-- Dieta per intolleranze -->
+  <div class="feature-row reverse">
+    <div class="feature-img">
+      <div class="image-blob blob-shape-4">
+        <img src="assets/images/intolleranze.png" alt="Dieta per intolleranze">
+      </div>
+    </div>
+    <div class="feature-text">
+      <h2>Piano Nutrizionale Personalizzato per Intolleranze</h2>
+      <p>Gestire le intolleranze alimentari richiede un approccio personalizzato ed attento, perciò creerò per te un piano nutrizionale equilibrato, sicuro e gustoso, per vivere senza rinunce e mantenere il benessere quotidiano. Ti aiuterò nell'identificazione degli alimenti da limitare o evitare e nella gestione dei sintomi.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="services" id="servizi">
+  <div class="container">
+    <h2>I Miei Servizi</h2>
+    <div class="services-grid">
+      @for (service of services; track service.title) {
+        <div class="service-card">
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<div class="cookie-banner" *ngIf="isVisible">
+  <div class="content">
+    <div class="text">
+      Utilizziamo cookie tecnici e, previo consenso, cookie statistici anonimizzati per migliorare l’esperienza. Puoi gestire le preferenze.
+      Leggi la <a routerLink="/Sito-web/cookie-policy">Cookie Policy</a> e la <a routerLink="/Sito-web/privacy-policy">Privacy</a>.
+    </div>
+    <div class="actions">
+      <button type="button" class="btn secondary" (click)="rejectAll()">Rifiuta tutto</button>
+      <button type="button" class="btn" (click)="acceptAll()">Accetta tutto</button>
+      <details>
+        <summary>Preferenze</summary>
+        <label class="pref"><input type="checkbox" [checked]="true" disabled> Necessari</label>
+        <label class="pref"><input type="checkbox" [(ngModel)]="preferences.analytics"> Statistiche anonimizzate</label>
+        <button type="button" class="btn secondary" (click)="savePreferences()">Salva</button>
+      </details>
+    </div>
+  </div>
+</div>
+
+

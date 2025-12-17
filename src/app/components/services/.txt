@@ -1,0 +1,216 @@
+<section class="features">
+  <!-- Primo blocco -->
+  <div class="feature-row">
+    <div class="feature-img">
+      <div class="image-blob blob-shape-1">
+        <img src="assets/images/Consulenza.png" alt="Consulenza nutrizionale">
+      </div>
+    </div>
+    <div class="feature-text">
+      <h2>Consulenza nutrizionale</h2>
+      <p>Un momento dedicato a te, per ascoltare le tue esigenze, chiarire dubbi e creare insieme nuove abitudini sane e sostenibili. </p>
+      <p>Insieme costruiremo un percorso su misura, orientato al benessere e pensato per durare nel tempo.</p>
+    </div>
+  </div>
+
+  <!-- Secondo blocco
+  <div class="feature-row reverse">
+    <div class="feature-img">
+      <img src="assets/images/piattoSanoN.png" alt="Piatto sano bilanciato">
+    </div>
+        <div class="feature-text">
+      <h2>Piatto sano</h2>
+      <p>Mangiare bene non significa rinunciare al gusto. Il modello Harvard propone un piatto completo e bilanciato, ricco di verdure, cereali integrali e proteine di qualità: un’ottima base per la tua salute e il tuo benessere.</p>
+    </div>
+  </div>
+
+  <div class="feature-row">
+    <div class="feature-img">
+      <img src="assets/images/ciboBuonoCS.png" alt="Alimenti sorridenti">
+    </div>
+    <div class="feature-text">
+      <h2>Alimenti felici</h2>
+      <p>Frutta e verdura sorridenti che ispirano grandi e piccoli a mangiare sano!</p>
+    </div>
+  </div> -->
+<!-- Consulenza online -->
+
+
+<!-- Dieta per celiaci -->
+<div class="feature-row reverse">
+  <div class="feature-img">
+    <div class="image-blob blob-shape-2">
+      <img src="assets/images/celiaci.png" alt="Dieta per celiaci">
+    </div>
+  </div>
+  <div class="feature-text">
+    <h2>Dieta per celiaci</h2>
+    <p>Piani alimentari personalizzati per chi soffre di celiachia, per una dieta sicura e varia.</p>
+  </div>
+</div>
+
+<!-- Educazione alimentare -->
+<div class="feature-row">
+  <div class="feature-img">
+    <div class="image-blob blob-shape-3">
+      <img src="assets/images/educazione.png" alt="Educazione alimentare">
+    </div>
+  </div>
+  <div class="feature-text">
+    <h2>Educazione alimentare</h2>
+    <p>Incontri per imparare a scegliere e gestire gli alimenti in modo consapevole e autonomo.</p>
+  </div>
+</div>
+
+
+<!-- Dieta post-partum -->
+<div class="feature-row reverse">
+  <div class="feature-img">
+    <div class="image-blob blob-shape-4">
+      <img src="assets/images/allattamento.png" alt="Dieta post-partum">
+    </div>
+  </div>
+  <div class="feature-text">
+    <h2>Dieta post-partum</h2>
+    <p>Supporto nutrizionale per il benessere della mamma dopo il parto, con attenzione alle nuove esigenze.</p>
+  </div>
+</div>
+
+<!-- Dieta per sportivi -->
+<div class="feature-row ">
+  <div class="feature-img">
+    <div class="image-blob blob-shape-1">
+      <img src="assets/images/sport.png" alt="Dieta per sportivi">
+    </div>
+  </div>
+  <div class="feature-text">
+    <h2>Dieta per sportivi</h2>
+    <p>Piani alimentari studiati per migliorare la performance sportiva e favorire il recupero.</p>
+  </div>
+</div>
+
+
+
+<!-- Dieta vegetariana -->
+<div class="feature-row reverse">
+  <div class="feature-img">
+    <div class="image-blob blob-shape-2">
+      <img src="assets/images/dieta-vegetariana.png" alt="Dieta vegetariana">
+    </div>
+  </div>
+  <div class="feature-text">
+    <h2>Dieta vegetariana</h2>
+    <p>Percorsi nutrizionali equilibrati per chi segue una dieta vegetariana, senza rinunciare al gusto.</p>
+  </div>
+</div>
+
+<!-- Dieta per colon irritabile -->
+<div class="feature-row">
+  <div class="feature-img">
+    <div class="image-blob blob-shape-3">
+      <img src="assets/images/dieta-colon.png" alt="Dieta per colon irritabile">
+    </div>
+  </div>
+  <div class="feature-text">
+    <h2>Dieta per colon irritabile</h2>
+    <p>Indicazioni nutrizionali per gestire i sintomi del colon irritabile e migliorare la qualità della vita.</p>
+  </div>
+</div>
+
+
+
+
+<!-- Dieta mediterranea -->
+<div class="feature-row reverse">
+  <div class="feature-img">
+    <div class="image-blob blob-shape-4">
+      <img src="assets/images/dieta-mediterranea.png" alt="Dieta mediterranea">
+    </div>
+  </div>
+  <div class="feature-text">
+    <h2>Dieta mediterranea</h2>
+    <p>Percorsi basati sulla tradizione mediterranea per una salute ottimale e uno stile di vita equilibrato.</p>
+  </div>
+</div>
+
+<!-- Dieta in gravidanza -->
+<div class="feature-row">
+  <div class="feature-img">
+    <div class="image-blob blob-shape-1">
+      <img src="assets/images/dieta-gravidanza.png" alt="Dieta in gravidanza">
+    </div>
+  </div>
+  <div class="feature-text">
+    <h2>Dieta in gravidanza</h2>
+    <p>Consigli e piani alimentari per il benessere di mamma e bambino durante la gravidanza.</p>
+  </div>
+</div>
+
+<!-- Dieta chetogenica -->
+<div class="feature-row reverse">
+  <div class="feature-img">
+    <div class="image-blob blob-shape-2">
+      <img src="assets/images/dieta-chetogenica.png" alt="Dieta chetogenica">
+    </div>
+  </div>
+  <div class="feature-text">
+    <h2>Dieta chetogenica</h2>
+    <p>Percorsi chetogenici personalizzati e monitorati da un professionista per raggiungere i tuoi obiettivi.</p>
+  </div>
+</div>
+
+<!-- Prima visita nutrizionale -->
+<div class="feature-row">
+  <div class="feature-img">
+    <div class="image-blob blob-shape-3">
+      <img src="assets/images/prima-visita.png" alt="Prima visita nutrizionale">
+    </div>
+  </div>
+  <div class="feature-text">
+    <h2>Prima visita nutrizionale</h2>
+    <p>Colloquio iniziale per valutare le tue esigenze e impostare un percorso personalizzato.</p>
+  </div>
+</div>
+
+<!-- Controllo nutrizionale -->
+<div class="feature-row reverse">
+  <div class="feature-img">
+    <div class="image-blob blob-shape-4">
+      <img src="assets/images/controllo-nutrizionale.png" alt="Controllo nutrizionale">
+    </div>
+  </div>
+  <div class="feature-text">
+    <h2>Controllo nutrizionale</h2>
+    <p>Monitoraggio periodico dei progressi e aggiornamento del piano alimentare.</p>
+  </div>
+</div>
+
+<!-- Analisi bioimpedenziometrica -->
+<div class="feature-row">
+  <div class="feature-img">
+    <div class="image-blob blob-shape-1">
+      <img src="assets/images/bioimpedenziometria.png" alt="Analisi bioimpedenziometrica">
+    </div>
+  </div>
+  <div class="feature-text">
+    <h2>Analisi bioimpedenziometrica</h2>
+    <p>Misurazione precisa della composizione corporea tramite bioimpedenziometria.</p>
+  </div>
+</div>
+
+</section>
+
+
+<section class="services" id="servizi">
+  <div class="container">
+    <h2>I Miei Servizi</h2>
+    <div class="services-grid">
+      @for (service of services; track service.title) {
+        <div class="service-card">
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

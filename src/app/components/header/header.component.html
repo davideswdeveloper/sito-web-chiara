@@ -1,0 +1,25 @@
+<header class="header">
+  <nav class="main-nav">
+    <div class="logo">
+      <img src="assets/images/logocompleto-removebg-preview.png" alt="Logo Maria Pia Raso" class="logo-image">
+      
+    </div>
+    <button class="mobile-menu-btn" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li><a href="/Sito-web/home">Home</a></li>
+      <li><a href="/Sito-web/servizi">Servizi</a></li>
+      <!-- <li><a href="/percorsi">Percorsi Nutrizionali</a></li> -->
+      <li><a href="/Sito-web/chi-sono">Chi sono</a></li>
+      <li><a href="/Sito-web/contatti">Contatti</a></li>
+
+      <li><a href="/Sito-web/ricette">Ricette</a></li>
+      <li><a href="https://www.miodottore.it/maria-pia-raso/nutrizionista/roma" class="cta-button" target="_blank" rel="noopener noreferrer">PRENOTA</a></li>
+      <!-- <li><a href="/Sito-web/db">db</a></li> -->
+    </ul>
+  </nav>
+  <div class="menu-overlay" *ngIf="isMenuOpen" (click)="toggleMenu()"></div>
+</header> 

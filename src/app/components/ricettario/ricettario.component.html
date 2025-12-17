@@ -1,0 +1,232 @@
+<section class="hero">
+  <div class="hero-text">
+    <h1>
+      La tua prossima
+
+      <span class="highlight">ricetta</span> preferita ti aspetta.
+    </h1>
+    <p>
+      Lasciati ispirare dalle mie ricette: scopri nuovi sapori e impara a mangiare con gusto, senza privazioni.
+    </p>
+    <button class="cta">Scopri le ricette</button>
+  </div>
+
+  <div class="hero-image">
+    <img src="assets/images/piattoPienoG2.png" alt="Hero Image">
+  </div>
+
+  
+</section>
+<div class="recipes-container" *ngIf="!isCreating && !isEditing && !isLoading">
+<br>
+  <h2 class="recipes-title">Le mie Ricette</h2>
+  <br>
+  <br>
+  
+  <div class="recipes-grid">
+    <div class="recipe-card" *ngFor="let recipe of recipes">
+      <div class="recipe-image-container">
+        <img [src]="recipe.main_image || 'assets/images/default-recipe.jpg'" 
+             [alt]="recipe.title" 
+             class="recipe-image"
+             (error)="onImageError($event)">
+      </div>
+      
+      <div class="recipe-info">
+        <h3 class="recipe-title">{{ recipe.title }}</h3>
+        
+        <div class="recipe-meta" *ngIf="recipe.cooking_time">
+          <i class="fas fa-clock"></i>
+          <span>{{ recipe.cooking_time !== '' ? recipe.cooking_time : 'N.D.' }}</span>
+        </div>
+        
+        <button class="view-btn" (click)="openRecipeModal(recipe)">
+          Visualizza Ricetta
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-recipes" *ngIf="recipes.length === 0">
+    <p>Nessuna ricetta trovata. Crea la tua prima ricetta!</p>
+  </div>
+</div>
+
+<!-- Modal per i dettagli della ricetta -->
+<div class="modal-overlay" *ngIf="selectedRecipe" (click)="closeRecipeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="back-to-recipes-btn" (click)="closeRecipeModal()">
+      <i class="fas fa-arrow-left"></i>
+      <span>Torna alle ricette</span>
+    </button>
+    
+    <div class="modal-body">
+      
+
+      <!-- <app-partial-recipe [recipe]="selectedRecipe"></app-partial-recipe> -->
+      @if(!isMobile){
+        
+        <div class="wrapper" *ngIf="selectedRecipe">
+          <input class="btn_animation__checkbox" id="animation" type="checkbox">
+          <label class="btn_animation" for="animation">
+              <svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+                  <path style="fill:#60b533" d="m178.6 202 202.1 198-202.1 198-60.3-61.8L257.2 400 118.3 263.8z"/>
+                  <path style="fill:#349905" d="m273.5 0 408.2 400-408.2 400-121.9-124.9L432.3 400 151.6 124.9z"/>
+                  <path style="fill:#5ecc25" d="m202.1 401-84-86.2v166.4z"/>
+              </svg>
+          </label>
+          <button class="btn_menu" type="button">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M4 5a1 1 0 0 0 0 2h16a1 1 0 1 0 0-2H4Zm3 7a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1Zm6 6a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2h-6a1 1 0 0 1-1-1Z"
+                      fill="#000"/>
+              </svg>
+          </button>
+          <main class="main">
+              <div class="main_section">
+                  <div class="header_wrapper">
+                      <h1 class="header_title">{{ selectedRecipe!.title }}</h1>
+                      <p class="header_subtitle" *ngIf="selectedRecipe!.subtitle">{{ selectedRecipe!.subtitle }}</p>
+                  </div>
+      
+                  <img class="main_image" 
+                      [src]="selectedRecipe!.main_image || 'assets/images/default-selectedRecipe.jpg'" 
+                      [alt]="selectedRecipe!.title"
+                      (error)="onImageError($event)"
+                      width="800" height="800">
+      
+                  <div class="selectedRecipe_footer">
+                      <div class="total">
+                          <div class="left">
+                              <dl class="selectedRecipe_controls">
+                                  <dt class="subtitle" *ngIf="selectedRecipe!.cooking_time">Cooking Time</dt>
+                                  <dd *ngIf="selectedRecipe!.cooking_time">
+                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path fill="#0F0F0F"
+                                              d="M23 12c0 6.075-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1s11 4.925 11 11ZM3.007 12a8.993 8.993 0 1 0 17.986 0 8.993 8.993 0 0 0-17.986 0Z"/>
+                                          <path fill="#0F0F0F"
+                                              d="M12 5a1 1 0 0 0-1 1v6.467s0 .26.127.457c.084.166.217.31.39.41l4.62 2.668a1 1 0 0 0 1-1.732L13 11.88V6a1 1 0 0 0-1-1Z"/>
+                                      </svg>
+                                      <span>{{ selectedRecipe!.cooking_time && selectedRecipe!.cooking_time.trim() !== '' ? selectedRecipe!.cooking_time : 'N.D.' }}</span>
+                                  </dd>
+              
+                                  <dt class="subtitle" *ngIf="selectedRecipe!.serving">Serving</dt>
+                                  <dd *ngIf="selectedRecipe!.serving">
+                                      <svg height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 487.55 487.55"
+                                          xml:space="preserve"><path d="M244.625 171.415c-40 0-72.4 32.4-72.4 72.4s32.4 72.4 72.4 72.4 72.4-32.4 72.4-72.4c-.1-40-32.5-72.4-72.4-72.4zm0 48.8c-13 0-23.6 10.6-23.6 23.6 0 6-4.8 10.8-10.8 10.8s-10.8-4.8-10.8-10.8c0-24.9 20.3-45.2 45.2-45.2 6 0 10.8 4.8 10.8 10.8 0 6-4.9 10.8-10.8 10.8z"/>
+                                          <path
+                                                  d="M481.325 227.515c-224.8-258.6-428-53.9-476.4 2.8-6.5 7.6-6.6 18.8-.1 26.4 221.9 259 423.4 64.6 476.5 3.7 8.3-9.4 8.3-23.4 0-32.9zm-236.7 119.1c-56.8 0-102.8-46-102.8-102.8s46-102.8 102.8-102.8 102.8 46 102.8 102.8-46.1 102.8-102.8 102.8z"/></svg>
+                                      <span>{{ selectedRecipe!.serving }}</span>
+                                  </dd>
+                              </dl>
+                          </div>
+                          <div class="right">
+                              <div class="selectedRecipe_ingredients" *ngIf="selectedRecipe!.ingredients.length > 0">
+                                  <p class="selectedRecipe_title subtitle">Ingredients</p>
+                                  <ul class="selectedRecipe_list">
+                                      <li *ngFor="let ingredient of selectedRecipe!.ingredients">
+                                          {{ ingredient.name }}{{ ingredient.quantity ? ' - ' + ingredient.quantity : '' }}
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="main_video" *ngIf="selectedRecipe!.steps.length > 0">
+                  <ol class="steps_list">
+                      <li *ngFor="let step of selectedRecipe!.steps">
+                          <b>{{ step.title }}</b>
+                          <p>{{ step.description }}</p>
+                      </li>
+                  </ol>
+      
+                  <div class="video_box" *ngIf="selectedRecipe!.video_url">
+                    <div class="video_box__wrap" #videoContainer>
+                      <ng-container *ngIf="extractVideoId(selectedRecipe!.video_url); else html5Video">
+                        <youtube-player
+                          #ytPlayer
+                          (ready)="onYouTubeReady()"
+                          [videoId]="extractVideoId(selectedRecipe!.video_url)!"
+                          [height]="750"
+                          [width]="560"
+                          [playerVars]="{ autoplay: 0, mute: 1, controls: 1 }">
+                        </youtube-player>
+                      </ng-container>
+                      <ng-template #html5Video>
+                        <video #htmlVideo
+                               [src]="selectedRecipe!.video_url"
+                               controls
+                               playsinline
+                               preload="metadata"
+                               [poster]="selectedRecipe!.main_image || 'assets/images/default-selectedRecipe.jpg'"
+                               style="width:100%; height:100%; object-fit: cover;">
+                          Il tuo browser non supporta il video HTML5.
+                        </video>
+                      </ng-template>
+                    </div>
+                  </div>
+                  
+              </div>
+          </main>
+      </div>
+
+       
+    }@else{
+    <div class="recipe-hero">
+        <img [src]="selectedRecipe.main_image || 'assets/images/default-recipe.jpg'" 
+             [alt]="selectedRecipe.title" 
+             class="modal-recipe-image"
+             (error)="onImageError($event)">
+        
+        <div class="recipe-details">
+          <p class="subtitle" *ngIf="selectedRecipe.subtitle">{{ selectedRecipe.subtitle }}</p>
+          
+          <div class="recipe-meta-details">
+            <span class="meta-item" *ngIf="selectedRecipe.cooking_time">
+              <i class="fas fa-clock"></i> {{ selectedRecipe.cooking_time }}
+            </span>
+            <span class="meta-item" *ngIf="selectedRecipe.serving">
+              <i class="fas fa-users"></i> {{ selectedRecipe.serving }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-content">
+        <div class="ingredients-section" *ngIf="selectedRecipe.ingredients.length > 0">
+          <h3>Ingredienti</h3>
+          <ul class="ingredients-list">
+            <li *ngFor="let ingredient of selectedRecipe.ingredients">
+              <span class="ingredient-name">{{ ingredient.name }}</span>
+              <span class="ingredient-quantity">{{ ingredient.quantity }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="steps-section" *ngIf="selectedRecipe.steps.length > 0">
+          <h3>Preparazione</h3>
+          <ol class="steps-list">
+            <li *ngFor="let step of selectedRecipe.steps; let i = index">
+              <div class="step-header">
+                <span class="step-number">{{ i + 1 }}</span>
+                <h4 class="step-title">{{ step.title }}</h4>
+              </div>
+              <p class="step-description">{{ step.description }}</p>
+            </li>
+          </ol>
+        </div>
+      </div> 
+}
+
+    
+    
+    
+    
+    
+    
+    
+    </div>
+  </div>
+</div>

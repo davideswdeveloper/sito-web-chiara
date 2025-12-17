@@ -1,0 +1,252 @@
+/* --- Impostazioni Generali --- */
+:root {
+    --brand-background: #f9f9f9;
+    --brand-text: #4A4A4A;
+    --brand-primary: #e57373;
+    --brand-secondary: #81c784;
+    --brand-accent: #FADBD8;
+}
+
+:host {
+    display: block;
+    background: var(--brand-background);
+    color: var(--brand-text);
+}
+
+
+/* Contact CTA */
+.contact-cta {
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .contact-cta h3 {
+    font-size: 2.2rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .contact-cta p {
+    font-size: 1.2rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+
+
+h2 {
+    font-size: 2.8rem;
+    color: #e57373;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* --- Hero Section Iniziale (scoped) --- */
+.about-hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--brand-text);
+    background: radial-gradient(ellipse at center, rgba(250, 219, 216, 0.35) 0%, rgba(255,255,255,0) 60%) var(--brand-background);
+    overflow: hidden;
+}
+.about-hero h1 {
+    font-family: 'Bodoni MT', 'Didot', serif;
+    font-size: 4rem;
+    color:#e57373;
+    /* color: var(--brand-primary) !important; */
+}
+.about-hero p { font-size: 1.1rem; color: var(--brand-text) !important; max-width: 880px; }
+.arrow-down { color: var(--brand-primary); margin-top: 32px; animation: bounce 2s infinite; }
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
+
+.hero-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(60px);
+    opacity: 0.35;
+    pointer-events: none;
+}
+.hero-blob-primary {
+    width: 55vmin;
+    height: 55vmin;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background: var(--brand-accent);
+}
+.hero-blob-secondary {
+    width: 45vmin;
+    height: 45vmin;
+    bottom: -10%;
+    right: -10%;
+    background: var(--brand-secondary);
+}
+
+/* --- Contenitore Principale e Freccia di Sfondo --- */
+.main-content-wrapper {
+    position: relative; /* Necessario per posizionare la freccia */
+    background-color: var(--brand-background);
+    color: var(--brand-text);
+}
+
+.background-arrow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* dietro ai contenuti */
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#animated-arrow-svg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 100%;
+}
+
+.content-sections {
+    position: relative; /* Deve stare sopra la freccia */
+    z-index: 1;
+}
+
+/* --- Layout Sezioni Alternato --- */
+.feature-section {
+    min-height: 90vh; /* Dà spazio per lo scroll */
+    display: flex;
+    align-items: center;
+    padding: 80px 40px;
+    overflow: hidden;
+    background: var(--brand-background);
+    color: var(--brand-text);
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.text-content, .image-content { flex: 1; }
+.text-content p { color: var(--brand-text); }
+
+/* LA MAGIA DELL'ALTERNANZA: le sezioni pari invertono l'ordine */
+.feature-section:nth-child(even) .content-container { flex-direction: row-reverse; }
+
+/* --- Stile "Blob" per le Immagini --- */
+.image-blob {
+    overflow: hidden;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.image-blob img {
+    width: 100%;
+    height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+}
+
+/* Forme diverse per ogni sezione */
+.blob-shape-1 { border-radius: 65% 35% 55% 45% / 60% 40% 60% 40%; }
+.blob-shape-2 { border-radius: 41% 59% 63% 37% / 44% 51% 49% 56%; }
+.blob-shape-3 { border-radius: 61% 39% 37% 63% / 61% 40% 60% 39%; }
+.blob-shape-4 { border-radius: 32% 68% 34% 66% / 64% 41% 59% 36%; }
+
+/* Mostra l'immagine intera nella sezione con blob-shape-4 */
+.blob-shape-4 img {
+    object-fit: contain;
+    transform: none;
+}
+
+/* --- Animazione di Entrata su Scroll --- */
+.fade-in-section { opacity: 1; transform: translateY(0); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+
+/* --- Responsive per Mobile --- */
+@media (max-width: 768px) {
+    h2 { font-size: 2rem; }
+    .content-container, .feature-section:nth-child(even) .content-container { flex-direction: column; text-align: center; }
+    .image-content { order: -1; margin-bottom: 30px; }
+    .image-blob { width: 300px; height: 300px; }
+    .background-arrow-container { display: none; }
+}
+
+#arrow-path {
+    stroke: url(#path-gradient);
+    stroke-width: 4;
+    fill: none;
+    stroke-linecap: round;
+    stroke-dasharray: 3000;   /* numero grande, più lungo del path */
+    stroke-dashoffset: 3000;  /* parte invisibile */
+    transition: stroke-dashoffset 0.1s linear;
+  }
+  
+.steps_list b {
+    color: var(--brand-primary);
+}
+
+.steps_list p {
+    color: var(--brand-text);
+}
+
+.feature-section p {
+  color: var(--brand-text) !important;
+}
+
+/* CTA button - About page */
+.btn-primary {
+    display: inline-block;
+    padding: 16px 40px;
+    background-color: #4caf50;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    font-size: 1.125rem;
+}
+
+.btn-primary:hover {
+    background-color: #6b9080;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 768px) {
+    .btn-primary {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+}

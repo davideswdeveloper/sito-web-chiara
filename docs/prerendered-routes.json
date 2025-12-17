@@ -1,0 +1,10 @@
+{
+  "routes": {
+    "/": {},
+    "/chi-sono": {},
+    "/db": {},
+    "/home": {},
+    "/ricette": {},
+    "/servizi": {}
+  }
+}

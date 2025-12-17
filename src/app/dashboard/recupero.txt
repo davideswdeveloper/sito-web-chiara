@@ -1,0 +1,47 @@
+
+<div class="scrolly-container">
+  <!-- 1. COLONNA VISIVA STICKY -->
+
+  <!-- ######################################################################################### 
+ inizio sezione piatto
+ ######################################################################################### -->
+  <div class="scrolly-visuals">
+    <app-receipts [disableInternalAnimation]="true"></app-receipts>
+  </div>
+
+  <!-- 2. COLONNA TESTO SCORREVOLE -->
+<div class="scrolly-content">
+  <!-- Ogni "step" è un trigger per cambiare l'immagine -->
+  <div class="step" data-step="1">
+    <h2>Il Metodo del Piatto Harvard</h2>
+    <p>Il mio approccio si basa sul modello del <strong>Piatto Harvard</strong>: uno schema semplice ed efficace per comporre pasti sani e bilanciati. Ogni sezione del piatto ha un ruolo ben preciso, per nutrire il corpo in modo completo, gustoso e consapevole.</p>
+  </div>
+  <div class="step" data-step="2">
+    <h2>1. Cereali Integrali e Proteine Magre</h2>
+    <p>Questa sezione include <strong>cereali integrali</strong> come farro o orzo, accompagnati da una <strong>fonte proteica magra</strong> come il petto di pollo. Una combinazione che assicura energia a lungo termine e supporto muscolare.</p>
+  </div>
+  <div class="step" data-step="3">
+    <h2>2. Frutta Fresca e Colori</h2>
+    <p>Frutta di stagione come <strong>banana, kiwi, arancia e frutti di bosco</strong> dona al piatto dolcezza naturale, fibre, antiossidanti e vitamine. Una porzione ideale per completare il pasto con freschezza ed energia pronta all'uso.</p>
+  </div>
+  <div class="step" data-step="4">
+    <h2>3. Legumi e Quinoa</h2>
+    <p>Qui troviamo un mix di <strong>quinoa, fagioli rossi e altri legumi</strong>: ricchi di fibre e proteine vegetali, rappresentano un'ottima alternativa o complemento alle proteine animali. Sazianti, nutrienti e sostenibili.</p>
+  </div>
+  <div class="step" data-step="5">
+    <h2>4. Verdure a Volontà</h2>
+    <p>La metà del piatto è riempita da <strong>verdure crude</strong> come lattuga, cetrioli, pomodorini e carote. Colorate, croccanti e ricche di micronutrienti, aiutano la digestione e donano volume al pasto con pochissime calorie.</p>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- ######################################################################################### 
+ Fine sezione piatto
+ ######################################################################################### -->

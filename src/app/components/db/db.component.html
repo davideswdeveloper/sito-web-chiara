@@ -1,0 +1,330 @@
+<div class="container">
+  <h1>Gestione Ricette</h1>
+
+  <!-- Messaggi di feedback -->
+  <div class="feedback-messages">
+    <div class="alert alert-success" *ngIf="successMessage">
+      <i class="fas fa-check-circle"></i> {{ successMessage }}
+    </div>
+    <div class="alert alert-danger" *ngIf="errorMessage">
+      <i class="fas fa-exclamation-circle"></i> {{ errorMessage }}
+    </div>
+  </div>
+
+  <!-- Loading spinner -->
+  <div class="loading-spinner" *ngIf="isLoading">
+    <div class="spinner">
+      <i class="fas fa-spinner fa-spin"></i>
+      <p>Caricamento in corso...</p>
+    </div>
+  </div>
+
+  <!-- Pulsante per creare nuova ricetta -->
+  <div class="actions" *ngIf="!isLoading">
+    <button class="btn btn-primary" (click)="startCreate()" *ngIf="!isCreating && !isEditing">
+      <i class="fas fa-plus"></i> Nuova Ricetta
+    </button>
+  </div>
+
+  <!-- Form per creare nuova ricetta -->
+  <div class="form-container" *ngIf="isCreating">
+    <h2>Nuova Ricetta</h2>
+    <form (ngSubmit)="createRecipe()" #createForm="ngForm">
+      <div class="form-group">
+        <label for="title">Titolo *</label>
+        <input type="text" id="title" name="title" [(ngModel)]="newRecipe.title" required class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="subtitle">Sottotitolo</label>
+        <input type="text" id="subtitle" name="subtitle" [(ngModel)]="newRecipe.subtitle" class="form-control">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cooking_time">Tempo di cottura</label>
+          <input type="text" id="cooking_time" name="cooking_time" [(ngModel)]="newRecipe.cooking_time" class="form-control" placeholder="es. 1.30">
+        </div>
+
+        <div class="form-group">
+          <label for="serving">Porzioni</label>
+          <input type="text" id="serving" name="serving" [(ngModel)]="newRecipe.serving" class="form-control" placeholder="es. 2 persone">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Immagine principale</label>
+        <div class="toggle-row">
+          <label><input type="radio" name="imageInputMode" [checked]="!useImageUpload" (change)="useImageUpload=false"> URL</label>
+          <label><input type="radio" name="imageInputMode" [checked]="useImageUpload" (change)="useImageUpload=true"> Carica file</label>
+        </div>
+        <div *ngIf="!useImageUpload">
+          <input type="url" id="main_image" name="main_image" [(ngModel)]="newRecipe.main_image" class="form-control" placeholder="https://...">
+        </div>
+        <div *ngIf="useImageUpload">
+          <input type="file" accept="image/*" (change)="onImageFileSelected($event)" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Video</label>
+        <div class="toggle-row">
+          <label><input type="radio" name="videoInputMode" [checked]="!useVideoUpload" (change)="useVideoUpload=false; onVideoToggleChange()"> URL</label>
+          <label><input type="radio" name="videoInputMode" [checked]="useVideoUpload" (change)="useVideoUpload=true; onVideoToggleChange()"> Carica file</label>
+        </div>
+        <div *ngIf="!useVideoUpload">
+          <input type="url" id="video_url" name="video_url" [(ngModel)]="newRecipe.video_url" class="form-control" placeholder="https://...">
+        </div>
+        <div *ngIf="useVideoUpload">
+          <input type="file" accept="video/*" (change)="onVideoFileSelected($event)" class="form-control">
+        </div>
+      </div>
+
+      <!-- Gestione Ingredienti -->
+      <div class="ingredients-section">
+        <h3>Ingredienti</h3>
+        <div class="bulk-box">
+          <label>Incolla elenco ingredienti (uno per riga). Le numerazioni iniziali saranno ignorate.</label>
+          <textarea [(ngModel)]="bulkIngredients" name="bulkIngredients" class="form-control" placeholder="es.\n450 grammi di zucca\n30 grammi di parmigiano\n..."></textarea>
+          <button type="button" class="btn btn-secondary" (click)="applyBulkIngredients()">Aggiungi</button>
+        </div>
+        <div class="ingredients-list">
+          <div class="ingredient-item" *ngFor="let ingredient of newRecipe.ingredients; let i = index">
+            <span class="ingredient-name">{{ ingredient.name }}</span>
+            <span class="ingredient-quantity">{{ ingredient.quantity }}</span>
+            <button type="button" class="btn btn-danger btn-sm" (click)="removeIngredient(i)">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="add-ingredient">
+          <input type="text" [(ngModel)]="newIngredient.name" name="newIngredientName" placeholder="Nome ingrediente" class="form-control">
+          <input type="text" [(ngModel)]="newIngredient.quantity" name="newIngredientQuantity" placeholder="Quantità" class="form-control">
+          <button type="button" class="btn btn-secondary" (click)="addIngredient()">
+            <i class="fas fa-plus"></i> Aggiungi
+          </button>
+        </div>
+      </div>
+
+      <!-- Gestione Step -->
+      <div class="steps-section">
+        <h3>Passi</h3>
+        <div class="bulk-box">
+          <label>Incolla i passi numerati (1., 2), 3 - ...)</label>
+          <textarea [(ngModel)]="bulkSteps" name="bulkSteps" class="form-control" placeholder="Procedimento:\n1. ...\n2. ...\n..."></textarea>
+          <button type="button" class="btn btn-secondary" (click)="applyBulkSteps()">Aggiungi Passi</button>
+        </div>
+        <div class="steps-list">
+          <div class="step-item" *ngFor="let step of newRecipe.steps; let i = index">
+            <div class="step-header">
+              <span class="step-number">{{ step.step }}</span>
+              <span class="step-title">{{ step.title }}</span>
+              <button type="button" class="btn btn-danger btn-sm" (click)="removeStep(i)">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+            <p class="step-description">{{ step.description }}</p>
+          </div>
+        </div>
+        
+        <div class="add-step">
+          <input type="text" [(ngModel)]="newStep.title" name="newStepTitle" placeholder="Titolo del passo" class="form-control">
+          <textarea [(ngModel)]="newStep.description" name="newStepDescription" placeholder="Descrizione del passo" class="form-control"></textarea>
+          <button type="button" class="btn btn-secondary" (click)="addStep()">
+            <i class="fas fa-plus"></i> Aggiungi Passo
+          </button>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-success" [disabled]="!createForm.valid || isLoading">
+          <i class="fas fa-save"></i> {{ isLoading ? 'Salvataggio...' : 'Salva Ricetta' }}
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="cancelEdit()" [disabled]="isLoading">
+          <i class="fas fa-times"></i> Annulla
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Form per modificare ricetta esistente -->
+  <div class="form-container" *ngIf="isEditing && editingRecipe">
+    <h2>Modifica Ricetta</h2>
+    <form (ngSubmit)="updateRecipe(editingRecipe)" #editForm="ngForm">
+      <div class="form-group">
+        <label for="edit-title">Titolo *</label>
+        <input type="text" id="edit-title" name="title" [(ngModel)]="editingRecipe.title" required class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="edit-subtitle">Sottotitolo</label>
+        <input type="text" id="edit-subtitle" name="subtitle" [(ngModel)]="editingRecipe.subtitle" class="form-control">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="edit-cooking_time">Tempo di cottura</label>
+          <input type="text" id="edit-cooking_time" name="cooking_time" [(ngModel)]="editingRecipe.cooking_time" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="edit-serving">Porzioni</label>
+          <input type="text" id="edit-serving" name="serving" [(ngModel)]="editingRecipe.serving" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Immagine principale</label>
+        <div class="toggle-row">
+          <label><input type="radio" name="editImageInputMode" [checked]="!editUseImageUpload" (change)="editUseImageUpload=false"> URL</label>
+          <label><input type="radio" name="editImageInputMode" [checked]="editUseImageUpload" (change)="editUseImageUpload=true"> Carica file</label>
+        </div>
+        <div *ngIf="!editUseImageUpload">
+          <input type="url" id="edit-main_image" name="main_image" [(ngModel)]="editingRecipe.main_image" class="form-control" placeholder="https://...">
+        </div>
+        <div *ngIf="editUseImageUpload">
+          <input type="file" accept="image/*" (change)="editOnImageFileSelected($event)" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Video</label>
+        <div class="toggle-row">
+          <label><input type="radio" name="editVideoInputMode" [checked]="!editUseVideoUpload" (change)="editUseVideoUpload=false; editOnVideoToggleChange()"> URL</label>
+          <label><input type="radio" name="editVideoInputMode" [checked]="editUseVideoUpload" (change)="editUseVideoUpload=true; editOnVideoToggleChange()"> Carica file</label>
+        </div>
+        <div *ngIf="!editUseVideoUpload">
+          <input type="url" id="edit-video_url" name="video_url" [(ngModel)]="editingRecipe.video_url" class="form-control" placeholder="https://...">
+        </div>
+        <div *ngIf="editUseVideoUpload">
+          <input type="file" accept="video/*" (change)="editOnVideoFileSelected($event)" class="form-control">
+        </div>
+      </div>
+
+      <!-- Gestione Ingredienti -->
+      <div class="ingredients-section">
+        <h3>Ingredienti</h3>
+        <div class="bulk-box">
+          <label>Incolla elenco ingredienti (uno per riga). Le numerazioni iniziali saranno ignorate.</label>
+          <textarea [(ngModel)]="editBulkIngredients" name="editBulkIngredients" class="form-control" placeholder="es.\n450 grammi di zucca\n30 grammi di parmigiano\n..."></textarea>
+          <button type="button" class="btn btn-secondary" (click)="applyEditBulkIngredients()">Aggiungi</button>
+        </div>
+        <div class="ingredients-list">
+          <div class="ingredient-item" *ngFor="let ingredient of editingRecipe.ingredients; let i = index">
+            <span class="ingredient-name">{{ ingredient.name }}</span>
+            <span class="ingredient-quantity">{{ ingredient.quantity }}</span>
+            <button type="button" class="btn btn-danger btn-sm" (click)="removeIngredient(i)">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="add-ingredient">
+          <input type="text" [(ngModel)]="editIngredient.name" name="editIngredientName" placeholder="Nome ingrediente" class="form-control">
+          <input type="text" [(ngModel)]="editIngredient.quantity" name="editIngredientQuantity" placeholder="Quantità" class="form-control">
+          <button type="button" class="btn btn-secondary" (click)="addIngredient()">
+            <i class="fas fa-plus"></i> Aggiungi
+          </button>
+        </div>
+      </div>
+
+      <!-- Gestione Step -->
+      <div class="steps-section">
+        <h3>Passi</h3>
+        <div class="bulk-box">
+          <label>Incolla i passi numerati (1., 2), 3 - ...)</label>
+          <textarea [(ngModel)]="editBulkSteps" name="editBulkSteps" class="form-control" placeholder="Procedimento:\n1. ...\n2. ...\n..."></textarea>
+          <button type="button" class="btn btn-secondary" (click)="applyEditBulkSteps()">Aggiungi Passi</button>
+        </div>
+        <div class="steps-list">
+          <div class="step-item" *ngFor="let step of editingRecipe.steps; let i = index">
+            <div class="step-header">
+              <span class="step-number">{{ step.step }}</span>
+              <span class="step-title">{{ step.title }}</span>
+              <button type="button" class="btn btn-danger btn-sm" (click)="removeStep(i)">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+            <p class="step-description">{{ step.description }}</p>
+          </div>
+        </div>
+        
+        <div class="add-step">
+          <input type="text" [(ngModel)]="editStep.title" name="editStepTitle" placeholder="Titolo del passo" class="form-control">
+          <textarea [(ngModel)]="editStep.description" name="editStepDescription" placeholder="Descrizione del passo" class="form-control"></textarea>
+          <button type="button" class="btn btn-secondary" (click)="addStep()">
+            <i class="fas fa-plus"></i> Aggiungi Passo
+          </button>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-success" [disabled]="!editForm.valid || isLoading">
+          <i class="fas fa-save"></i> {{ isLoading ? 'Aggiornamento...' : 'Aggiorna Ricetta' }}
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="cancelEdit()" [disabled]="isLoading">
+          <i class="fas fa-times"></i> Annulla
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Lista delle ricette esistenti -->
+  <div class="recipes-list" *ngIf="!isCreating && !isEditing && !isLoading">
+    <h2>Ricette Esistenti</h2>
+    
+    <div class="recipe-card" *ngFor="let recipe of recipes">
+      <div class="recipe-header">
+        <h3>{{ recipe.title }}</h3>
+        <div class="recipe-actions">
+          <button class="btn btn-primary btn-sm" (click)="startEdit(recipe)">
+            <i class="fas fa-edit"></i> Modifica
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="deleteRecipe(recipe.id)">
+            <i class="fas fa-trash"></i> Elimina
+          </button>
+        </div>
+      </div>
+      
+      <div class="recipe-content">
+        <p class="subtitle" *ngIf="recipe.subtitle">{{ recipe.subtitle }}</p>
+        
+        <div class="recipe-details">
+          <span class="detail" *ngIf="recipe.cooking_time">
+            <i class="fas fa-clock"></i> {{ recipe.cooking_time }}
+          </span>
+          <span class="detail" *ngIf="recipe.serving">
+            <i class="fas fa-users"></i> {{ recipe.serving }}
+          </span>
+        </div>
+
+        <div class="recipe-media" *ngIf="recipe.main_image">
+          <img [src]="recipe.main_image" [alt]="recipe.title" class="recipe-image">
+        </div>
+
+        <div class="ingredients-preview" *ngIf="recipe.ingredients.length > 0">
+          <h4>Ingredienti:</h4>
+          <ul>
+            <li *ngFor="let ingredient of recipe.ingredients">
+              {{ ingredient.name }} - {{ ingredient.quantity }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="steps-preview" *ngIf="recipe.steps.length > 0">
+          <h4>Passi:</h4>
+          <ol>
+            <li *ngFor="let step of recipe.steps">
+              <strong>{{ step.title }}</strong>: {{ step.description }}
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="no-recipes" *ngIf="recipes.length === 0">
+      <p>Nessuna ricetta trovata. Crea la tua prima ricetta!</p>
+    </div>
+  </div>
+</div> 
