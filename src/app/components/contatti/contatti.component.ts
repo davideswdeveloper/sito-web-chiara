@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 export class ContattiComponent {
 
   prenotaVisita() {
-    window.open('https://www.miodottore.it/', '_blank');
+    window.open('https://www.miodottore.it/chiara-del-re-2/dermatologo', '_blank');
   }
 
 
@@ -23,7 +23,7 @@ export class ContattiComponent {
   };
   
   scriviWhatsApp() {
-    const phone = '393295840904';
+    const phone = '393793162089';
     const nome = this.formData.name;
     const email = this.formData.email ? ` Email: ${this.formData.email}.` : '';
     const messaggio = this.formData.message || '';
@@ -43,7 +43,7 @@ export class ContattiComponent {
   portamiQui(sede: string) {
     if (sede === 'online') {
       // Per le consulenze online, apri il link di prenotazione
-      window.open('https://www.miodottore.it/', '_blank');
+      window.open('https://www.miodottore.it/chiara-del-re-2/dermatologo', '_blank');
     } else {
       // Per le sedi fisiche, apri Google Maps con l'indirizzo
       const encodedAddress = encodeURIComponent(sede);

@@ -512,6 +512,44 @@ form button:active {
   margin-bottom: 0;
 }
 
+/* checkbox */
+.checkbox-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;                 /* spazio piccolo tra checkbox e testo */
+  width: 100%;
+  justify-content: flex-start !important; /* forza allineamento a sinistra */
+  text-align: left !important;
+  margin: 0.25rem 0;
+  white-space: normal;         /* permette il wrap su schermi stretti */
+}
+
+.checkbox-inline input[type="checkbox"] {
+  margin: 0;
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  align-self: center;
+  /* se il checkbox è troppo piccolo o troppo grande regola width/height qui */
+}
+
+.checkbox-inline a {
+  margin: 0;
+  display: inline;
+}
+
+/* Assicura che gli elementi figli del form siano allineati a sinistra quando il form usa grid */
+form {
+  justify-items: start;
+}
+
+/* su schermi stretti mantenere un gap ridotto */
+@media (max-width: 480px) {
+  .checkbox-inline {
+    gap: 0.35rem;
+  }
+}
+
 /* Animazioni */
 @keyframes fadeInUp {
   from {
