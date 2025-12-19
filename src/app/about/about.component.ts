@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, AfterViewInit, ElementRef } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import test from 'node:test';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  imports: [CommonModule, FormsModule],   // 👈 aggiungi qui
+  imports: [CommonModule, FormsModule, RouterLink],  
 
   styleUrls: ['./about.component.css'],
 })
