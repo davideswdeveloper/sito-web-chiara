@@ -38,6 +38,8 @@ export class DashboardComponent implements AfterViewInit {
     setTimeout(() => {
       this.initScrollyAnimation();
       this.initMetodoScrollyAnimation();
+      this.initVisiteScrollyAnimation();
+      this.initVisitaFlowVisual();
       this.initRevealOnScroll();
       this.initHeroAnimation();
     }, 100);
@@ -151,6 +153,119 @@ onSubmit(event: Event) {
   console.log('Dati salvati:', this.formData);
   localStorage.setItem('contatto', JSON.stringify(this.formData));
 }
+
+  private initVisiteScrollyAnimation(): void {
+    const visiteSteps = Array.from(this.document.querySelectorAll<HTMLElement>('.visite-step'));
+
+    if (visiteSteps.length === 0) {
+      return;
+    }
+
+    const setActive = (activeStep: HTMLElement) => {
+      visiteSteps.forEach(step => {
+        if (step === activeStep) {
+          step.classList.add('is-active');
+        } else {
+          step.classList.remove('is-active');
+        }
+      });
+    };
+
+    const observerOptions: IntersectionObserverInit = {
+      root: null,
+      rootMargin: '-35% 0px -45% 0px',
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const step = entry.target as HTMLElement;
+          setActive(step);
+        }
+      });
+    }, observerOptions);
+
+    visiteSteps.forEach(step => observer.observe(step));
+
+    // Stato iniziale
+    setActive(visiteSteps[0]);
+  }
+
+  private initVisitaFlowVisual(): void {
+    const section = this.document.getElementById('visita-flow-visual');
+    const stepCards = Array.from(this.document.querySelectorAll<HTMLElement>('.flow-step-card'));
+    const images = Array.from(this.document.querySelectorAll<HTMLElement>('.visita-flow-main-image'));
+    const clouds = Array.from(this.document.querySelectorAll<HTMLElement>('.visita-flow-cloud'));
+
+    if (!section || stepCards.length === 0 || images.length === 0) {
+      return;
+    }
+
+    const setVisualState = (stepNumber: number) => {
+      // attiva le card fino allo step corrente
+      stepCards.forEach(card => {
+        const cardStep = parseInt(card.dataset['flowStep'] || card.getAttribute('data-flow-step') || '0', 10);
+        if (cardStep <= stepNumber) {
+          card.classList.add('is-visible');
+        } else {
+          card.classList.remove('is-visible');
+        }
+      });
+
+      images.forEach(img => {
+        const imgStep = parseInt(img.dataset['flowStep'] || img.getAttribute('data-flow-step') || '0', 10);
+        if (imgStep === stepNumber) {
+          img.classList.add('is-active');
+        } else {
+          img.classList.remove('is-active');
+        }
+      });
+
+      clouds.forEach(cloud => {
+        const cloudStep = parseInt(cloud.dataset['cloudStep'] || cloud.getAttribute('data-cloud-step') || '0', 10);
+        if (cloudStep <= stepNumber) {
+          cloud.classList.add('is-visible');
+        } else {
+          cloud.classList.remove('is-visible');
+        }
+      });
+    };
+
+    const onScroll = () => {
+      const sectionEl = section as HTMLElement;
+      const sectionTop = sectionEl.offsetTop;
+      const sectionHeight = sectionEl.offsetHeight;
+      const viewportHeight = window.innerHeight || 1;
+      const scrollY = window.scrollY || window.pageYOffset || 0;
+
+      const start = sectionTop;
+      const end = sectionTop + sectionHeight - viewportHeight;
+      const maxScroll = Math.max(end - start, 1);
+      const clamped = Math.min(Math.max(scrollY - start, 0), maxScroll);
+      const progress = clamped / maxScroll;
+
+      let stepNumber = 1;
+      if (progress > 0.75) {
+        stepNumber = 4;
+      } else if (progress > 0.5) {
+        stepNumber = 3;
+      } else if (progress > 0.25) {
+        stepNumber = 2;
+      } else {
+        stepNumber = 1;
+      }
+
+      setVisualState(stepNumber);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+
+    // Stato iniziale
+    setVisualState(1);
+    onScroll();
+  }
 
   private initMetodoScrollyAnimation(): void {
     const metodoSteps = this.document.querySelectorAll('.metodo-step');
