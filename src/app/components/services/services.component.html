@@ -4,7 +4,7 @@
     <h1 class="static-part">Il tuo percorso verso</h1>
 
     <!-- Parte dinamica: articolo + parola -->
-    <h1 class="dynamic-part">
+    <!-- <h1 class="dynamic-part">
       <span class="article">{{ current.articolo }}</span>
       @if(current.articolo === 'la' || current.articolo === 'il'){
       <span class="highlight rotating-word">&nbsp;{{ current.parola }}</span>
@@ -12,17 +12,14 @@
         <span class="highlight rotating-word"> {{ current.parola }}</span>
 
       }
-    </h1>
-
+    </h1> -->
+    <h1 class = "highlight rotating-word">una pelle sana</h1>
     <!-- Testo fisso finale -->
     <h1 class="static-part">inizia qui.</h1>
   
-
-
-    
     <p>
-      Scopri come un'alimentazione sana e personalizzata può trasformare la tua vita. 
-      <br>Sono qui per guidarti, passo dopo passo.
+      Scopri come l'ascolto e cure dermatologiche su misura possono garantire la salute <br>e il benessere della tua pelle nel tempo.
+      Sono qui per guidarti, passo dopo passo.
     </p>
     <button class="cta" onclick="document.getElementById('servizi_con_foto').scrollIntoView({ behavior: 'smooth' })">
       Scopri i Servizi
@@ -32,7 +29,7 @@
   
 
   <div class="hero-image">
-    <img src="assets/images/pia-removebg-preview.png " alt="Hero Image">
+    <img src="assets/images/chiara.jpg " alt="Hero Image">
   </div>
 
 
@@ -54,10 +51,6 @@
 
 <section class="services-intro" id="servizi_con_foto">
   <h2>I Miei Servizi</h2>
-  <p>
-    Offro una gamma completa di servizi medici per aiutarti a raggiungere i tuoi 
-    obiettivi di salute e benessere della pelle.
-  </p>
 </section>
 
 <section class="features" >
@@ -109,43 +102,12 @@
         <li>Dermatite Atopica</li>
         <li>Dermatiti allergiche</li>
         <li>Orticaria</li>
+        <li>Prurito</li>
       </ul>
     </div>
   </div>
 
-  <!-- Trattamenti ambulatoriali -->
-  <div class="feature-row reverse">
-    <div class="feature-img">
-      <div class="image-blob blob-shape-4">
-        <img src="assets/images/laser.png" alt="Laser e infiltrazioni">
-      </div>
-    </div>
-    <div class="feature-text">
-      <h2>Trattamenti ambulatoriali</h2>
-      <ul>
-        <li>Laser CO2 ablativo per verruche, fibromi penduli, cheratosi seborroiche</li>
-        <li>Laser CO2 frazionato per cicatrici di acne, ringiovanimento cutaneo</li>
-        <li>Diatermocoagulazione di lesioni cutanee benigne</li>
-        <li>Peeling chimici per cicatrici, iperpigmentazioni cutanee e ringiovanimento</li>
-        <li>Biorivitalizzazione per dare idratazione profonda e luminosità</li>
-        <li>Iniezione di tossina botulinica, come trattamento estetico e per iperidrosi</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Dermatologia Pediatrica -->
-  <div class="feature-row">
-    <div class="feature-img">
-      <div class="image-blob blob-shape-3">
-        <img src="assets/images/pediatrica.png" alt="Dermatologia Pediatrica">
-      </div>
-    </div>
-    <div class="feature-text">
-      <h2>Dermatologia Pediatrica</h2>
-    </div>
-  </div>
-
-  <!-- Malattie autoimmuni -->
+    <!-- Malattie autoimmuni -->
   <div class="feature-row reverse">
     <div class="feature-img">
       <div class="image-blob blob-shape-1">
@@ -163,8 +125,28 @@
     </div>
   </div>
 
-  <!-- Malattie infettive -->
+    <!-- Trattamenti ambulatoriali -->
   <div class="feature-row">
+    <div class="feature-img">
+      <div class="image-blob blob-shape-4">
+        <img src="assets/images/laser.png" alt="Laser e infiltrazioni">
+      </div>
+    </div>
+    <div class="feature-text">
+      <h2>Trattamenti ambulatoriali</h2>
+      <ul>
+        <li><b>Laser CO2 ablativo</b> per verruche, fibromi penduli, cheratosi seborroiche</li>
+        <li><b>Laser CO2 frazionato</b> per cicatrici di acne, ringiovanimento cutaneo</li>
+        <li><b>Diatermocoagulazione</b> di lesioni cutanee benigne</li>
+        <li><b>Peeling chimici</b> per cicatrici, iperpigmentazioni cutanee e ringiovanimento</li>
+        <li><b>Biorivitalizzazione</b> per dare idratazione profonda e luminosità</li>
+        <li><b>Iniezione di tossina botulinica</b>, come trattamento estetico e per iperidrosi</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Malattie infettive -->
+  <div class="feature-row reverse">
     <div class="feature-img">
       <div class="image-blob blob-shape-2">
         <img src="assets/images/infettive.png" alt="Malattie infettive">
@@ -182,6 +164,19 @@
       </ul>
     </div>
   </div>
+
+  <!-- Dermatologia Pediatrica -->
+  <div class="feature-row">
+    <div class="feature-img">
+      <div class="image-blob blob-shape-3">
+        <img src="assets/images/pediatrica.png" alt="Dermatologia Pediatrica">
+      </div>
+    </div>
+    <div class="feature-text">
+      <h2>Dermatologia Pediatrica</h2>
+    </div>
+  </div>
+
 </section>
 
 
