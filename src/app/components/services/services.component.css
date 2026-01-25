@@ -1,73 +1,174 @@
-.hero-text {
+/* ============================================
+   SERVICES HERO SECTION - Stile moderno come Contatti
+   ============================================ */
+.services-hero {
+  position: relative;
+  margin-top: 80px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fdfcfb;
+  overflow: hidden;
+}
 
+/* Sfondo Animato */
+.hero-animations {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.blur-circle {
+  position: absolute;
+  filter: blur(80px);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: float 10s infinite alternate ease-in-out;
+}
+
+.blur-circle--1 {
+  width: 400px;
+  height: 400px;
+  background: #e57373;
+  top: -10%;
+  left: -5%;
+  animation-duration: 15s;
+}
+
+.blur-circle--2 {
+  width: 300px;
+  height: 300px;
+  background: #4f7763;
+  bottom: 10%;
+  right: -5%;
+  animation-duration: 12s;
+  animation-delay: -2s;
+}
+
+.blur-circle--3 {
+  width: 250px;
+  height: 250px;
+  background: #f2e9e4;
+  bottom: 20%;
+  left: 30%;
+  animation-duration: 18s;
+}
+
+.services-hero__container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+}
+
+.services-hero__content {
   text-align: center;
-
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.hero {
-  max-height: 20%;
-}
-
-
-
-.static-part {
-
-  font-size: 3rem;
-
-  line-height: 1.2;
-
-  font-weight: 400;
-
-  margin: 0;
-
-  color: #22223b;
-
-}
-
-
-
-.dynamic-part {
-
-  font-size: 3rem;
-
-  line-height: 1.2;
-
-  margin: 0;
-
-}
-
-
-
-.article {
-
-  font-weight: 400;
-
-  margin-right: 4px; /* spazio tra articolo e parola */
-
-}
-
-
-
-.rotating-word {
-
+.hero-tagline {
   display: inline-block;
-
-  min-width: 160px; /* spazio fisso per evitare salto */
-
-  text-align: left;
-
-  transition: opacity 0.5s ease, transform 0.5s ease;
-
+  padding: 8px 16px;
+  background: rgba(79, 119, 99, 0.1);
+  color: #4f7763;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  animation: fadeInDown 0.8s ease-out;
 }
 
+.services-hero__title {
+  font-size: clamp(2.8rem, 8vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #22223b;
+  margin-bottom: 24px;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
 
+.text-gradient {
+  background: linear-gradient(135deg, #B86A6A 0%, #e57373 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-.highlight {
+.services-hero__subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: #4a4e69;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
 
-  color: #4f7763;
+/* Indicatore di scroll (Mouse) */
+.hero-scroll-indicator {
+  display: flex;
+  justify-content: center;
+  animation: fadeIn 1s ease-in 1.2s both;
+}
 
-  font-weight: 700;
+.mouse {
+  width: 26px;
+  height: 42px;
+  border: 2px solid #4f7763;
+  border-radius: 20px;
+  position: relative;
+}
 
+.mouse::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 4px;
+  height: 8px;
+  background: #4f7763;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  animation: scrollMouse 2s infinite;
+}
+
+/* Animazioni */
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, 50px) scale(1.1); }
+}
+
+@keyframes scrollMouse {
+  0% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, 15px); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-hero {
+    min-height: 60vh;
+  }
+  .blur-circle {
+    filter: blur(50px);
+  }
 }
 
 
@@ -892,34 +993,77 @@
   box-shadow: 0px 8px 20px rgba(229, 115, 115, 0.6);
 
 }
+/* Modifica queste classi nel tuo file CSS */
 
 .hero-image {
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
+  width: 800px;          /* AUMENTA QUI */
+  height: 800px;         /* IMPORTANTE */
+  aspect-ratio: 4 / 5;
+
+  mask-image: url("./blob.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  -webkit-mask-image: url("blob.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+
   overflow: hidden;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  box-shadow: 0 0 25px rgba(229, 115, 115, 0.6);
-  animation: pulse 4s infinite, bgColor 8s infinite alternate;
+  box-shadow: var(--shadow-lg);
 }
+
+/* Rimuoviamo il bgColor dall'immagine stessa se è una foto, 
+   meglio lasciarlo sul contenitore o come overlay se necessario */
 
 .hero-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-
-  margin-left: 0px;
-
-  /* SOLO QUI */
-  transform: translateZ(0);
-  backface-visibility: hidden;
+  object-fit: cover; /* Fondamentale per non deformare l'immagine */
+  
+  /* Reset dei margini precedenti */
+  margin-left: 0;
+  transform: rotate(3deg); /* Inclina l'immagine di 3 gradi */
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Transizione fluida */
+  
+  /* Ombra più profonda per enfatizzare l'inclinazione */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  position: relative;
 }
 
+/* EFFETTO HOVER (Quando passi il mouse) */
+.hero-image:hover {
+  transform: rotate(0deg) translateY(-10px); /* Si raddrizza e sale leggermente */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
 
+/* Se vuoi aggiungere il bordo animato rettangolare come nel secondo esempio */
+.hero-image-container {
+  position: relative;
+  transform: rotate(3deg); /* Inclina l'immagine di 3 gradi */
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Transizione fluida */
+  padding: 10px; /* Spazio per il bordo esterno */
+}
 
+.image-border-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid var(--primary-color);
+  border-radius: 35px; /* Leggermente più grande del border-radius dell'immagine */
+  opacity: 0.3;
+  animation: borderPulse 2s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes borderPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.02); }
+}
 
 
 @keyframes bgColor {

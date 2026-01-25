@@ -1,79 +1,288 @@
-<section id="home" class="home-hero">
-  <div class="home-hero__overlay"></div>
-  <div class="home-hero__content">
-    <h1 class="home-hero__title">Dott.ssa Chiara Del Re</h1>
-    <p class="home-hero__subtitle">Dermatologa</p>
-    <p class="home-hero__tagline">La salute della tua pelle, al centro del mio lavoro.</p>
-    <br>
-    <a class="btn-primary" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">
-      Scopri di più
-    </a>
+<section id="home" class="home-hero-modern">
+  <!-- Sfondo con particelle animate -->
+  <div class="hero-particles">
+    <div class="particle particle--1"></div>
+    <div class="particle particle--2"></div>
+    <div class="particle particle--3"></div>
+    <div class="particle particle--4"></div>
+    <div class="particle particle--5"></div>
+    <div class="particle particle--6"></div>
+  </div>
+
+  <!-- Blob animati di sfondo -->
+  <div class="hero-blobs">
+    <div class="animated-blob blob--1"></div>
+    <div class="animated-blob blob--2"></div>
+    <div class="animated-blob blob--3"></div>
+  </div>
+
+  <!-- Contenuto principale -->
+  <div class="home-hero-modern__container">
+    <div class="home-hero-modern__content">
+
+
+      <!-- Titolo principale con effetto gradiente e animazione -->
+      <h1 class="hero-main-title">
+        <span class="title-line title-line--1">Dott.ssa</span>
+        <span class="title-line title-line--2">
+          <span class="gradient-text">Chiara</span> <span class="gradient-text">Del Re</span>
+        </span>
+      </h1>
+
+      <!-- Sottotitolo con effetto typing -->
+      <p class="hero-subtitle-modern">
+        La salute della tua pelle, <br>
+        al <span class="highlight-word">centro</span> del mio lavoro
+      </p>
+
+      <!-- Call to action con effetti hover avanzati -->
+      <div class="hero-cta-group">
+        <a class="btn-hero-primary" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">
+          <span class="btn-text">Scopri di più</span>
+          <span class="btn-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="btn-glow"></span>
+        </a>
+        
+        <a class="btn-hero-secondary" onclick="document.getElementById('contatti').scrollIntoView({ behavior: 'smooth' })">
+          <span class="btn-text">Prenota visita</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+        </a>
       </div>
-    <div class="custom-shape-divider-bottom-1751296690">
-      <svg data-name="Layer 1"
-           xmlns="http://www.w3.org/2000/svg"
-           viewBox="0 0 1200 120"
-           preserveAspectRatio="none">
-        <path
-          d="M0,65
-             C100,60 200,55 300,45
-             C400,35 500,20 600,30
-             C700,40 800,75 900,95
-             C1000,115 1100,105 1200,85
-             L1200,0
-             L0,0Z"
-          class="shape-fill">
-        </path>
-      </svg>
+
+      <!-- Statistiche animate -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">5 ⭐</div>
+          <div class="stat-label">Su MioDottore</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Pazienti soddisfatti</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Dedizione</div>
+        </div>
+      </div>
     </div>
-    
 
+    <!-- Immagine con effetti 3D -->
+    <div class="home-hero-modern__visual">
+      <div class="visual-frame">
+        <div class="frame-decoration frame-decoration--tl"></div>
+        <div class="frame-decoration frame-decoration--tr"></div>
+        <div class="frame-decoration frame-decoration--bl"></div>
+        <div class="frame-decoration frame-decoration--br"></div>
+        <img src="assets/images/chiarahome.jpeg" alt="Dott.ssa Chiara Del Re" class="hero-image-modern">
+        <div class="image-glow"></div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Scroll indicator animato -->
+  <div class="hero-scroll-hint">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scorri per esplorare</span>
+  </div>
 </section>
 
-<section id="about" class="section about-section">
-  <div class="section__inner">
-    <div class="about-grid reveal-on-scroll" data-delay="0.1">
-      <div class="about-text">
-        <h2 class="section__title">Chi Sono</h2>
-        <p class="about-paragraph">Sono la Dottoressa <strong>Chiara Del Re</strong>, Dermatologa e Venereologa. Mi occupo della salute e del benessere della pelle, con particolare attenzione alla prevenzione, diagnosi e trattamento delle principali patologie cutanee. Credo in un approccio scientifico ma empatico, per offrirti un percorso di cura personalizzato e un mantenimento nel tempo dei risultati ottenuti.</p>
-        <a href="/Sito-web/chi-sono" class="about-link">Scopri di più su di me →</a>
+<section id="about" class="about-section-modern">
+  <div class="about-container-modern">
+    <div class="about-content-modern reveal-on-scroll" data-delay="0.1">
+      <span class="section-badge-modern">Chi sono</span>
+      <h2 class="about-title-modern">
+        Un approccio <span class="gradient-text-inline">empatico</span> alla dermatologia
+      </h2>
+      <div class="about-text-modern">
+        <p>Sono la Dottoressa <strong>Chiara Del Re</strong>, Dermatologa e Venereologa specializzata nella salute e nel benessere della pelle.</p>
+        <p>Mi dedico con passione alla prevenzione, diagnosi e trattamento delle patologie cutanee, combinando rigore scientifico ed empatia per offrirti un percorso di cura personalizzato e risultati duraturi nel tempo.</p>
       </div>
-      <div class="about-image">
-        <img src="assets/images/herohome2.png" alt="Dott.ssa Chiara Del Re, Dermatologa">
+      <div class="about-features-modern">
+        <div class="feature-item-modern">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <span>Approccio personalizzato</span>
+        </div>
+        <div class="feature-item-modern">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <polyline points="2 17 12 22 22 17"/>
+            <polyline points="2 12 12 17 22 12"/>
+          </svg>
+          <span>Tecnologie avanzate</span>
+        </div>
+        <div class="feature-item-modern">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          <span>Cura continuativa</span>
+        </div>
+      </div>
+      <a href="/Sito-web/chi-sono" class="btn-modern-outline">
+        <span>Scopri di più su di me</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+    <div class="about-visual-modern reveal-on-scroll" data-delay="0.2">
+      <div class="about-image-wrapper-modern">
+        <div class="image-decoration-modern decoration-1"></div>
+        <div class="image-decoration-modern decoration-2"></div>
+        <img src="assets/images/herohome2.png" alt="Dott.ssa Chiara Del Re, Dermatologa" class="about-image-modern">
+        <div class="image-frame-accent"></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="highlights" class="section highlights-section">
-  <div class="section__inner">
-    <div class="section__header reveal-on-scroll" data-delay="0.1">
-      <h2 class="section__title">Perché affidarti a me</h2>
-      <p class="section__subtitle">Un approccio dermatologico moderno, basato su evidenze scientifiche e attenzione alla persona.</p>
+
+<section id="focus-pelle" class="focus-section-modern">
+  <div class="focus-container-modern">
+    <div class="focus-header-modern reveal-on-scroll" data-delay="0.1">
+      <span class="section-badge-modern">Servizi</span>
+      <h2 class="section-title-modern">Scopri i miei servizi</h2>
+      <p class="section-subtitle-modern">
+        Le principali condizioni dermatologiche che tratto più frequentemente in studio
+      </p>
     </div>
 
-    <div class="highlights-grid">
-      <div class="highlight-card fade-in-up" data-delay="0.1">
-        <div class="highlight-icon">🔬</div>
+    <div class="focus-grid-modern">
+      <div class="focus-card-modern fade-in-up" data-delay="0.1">
+        <div class="focus-icon-modern">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="6"/>
+            <circle cx="12" cy="12" r="2"/>
+          </svg>
+        </div>
+        <h3>Acne e impurità</h3>
+        <p>Gestione di acne giovanile e dell'adulto, cicatrici e brufoletti ricorrenti con protocolli mirati</p>
+        <a href="/Sito-web/servizi" class="focus-link-modern">
+          <span>Scopri i percorsi dedicati</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="card-hover-glow"></div>
+      </div>
+
+      <div class="focus-card-modern fade-in-up" data-delay="0.2">
+        <div class="focus-icon-modern">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 16v-4M12 8h.01"/>
+          </svg>
+        </div>
+        <h3>Macchie, fotoaging e melasma</h3>
+        <p>Valutazione delle discromie cutanee e piani per uniformare il colorito e migliorare la texture</p>
+        <a href="/Sito-web/servizi" class="focus-link-modern">
+          <span>Approfondisci i trattamenti</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <div class="card-hover-glow"></div>
+      </div>
+
+      <div class="focus-card-modern fade-in-up" data-delay="0.3">
+        <div class="focus-icon-modern">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
+            <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"/>
+          </svg>
+        </div>
+        <h3>Nei e prevenzione melanoma</h3>
+        <p>Controllo dei nevi, mappatura e monitoraggio nel tempo per una prevenzione mirata e consapevole</p>
+        <a href="/Sito-web/servizi" class="focus-link-modern">
+          <span>Parliamo di prevenzione</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <div class="card-hover-glow"></div>
+      </div>
+    </div>
+  </div>
+<br>
+<div class="btn-modern-wrapper">
+  <a href="/servizi" class="btn-modern">
+    <span>Scopri tutti i servizi</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M5 12h14M12 5l7 7-7 7"/>
+    </svg>
+  </a>
+</div>
+</section>
+
+
+<!-- <section id="highlights" class="highlights-section-modern">
+  <div class="highlights-container-modern">
+    <div class="highlights-header-modern reveal-on-scroll" data-delay="0.1">
+      <span class="section-badge-modern">I miei valori</span>
+      <h2 class="section-title-modern">Perché affidarti a me</h2>
+      <p class="section-subtitle-modern">
+        Un approccio dermatologico moderno, basato su evidenze scientifiche e attenzione alla persona
+      </p>
+    </div>
+
+    <div class="highlights-grid-modern">
+      <div class="highlight-card-modern fade-in-up" data-delay="0.1">
+        <div class="card-icon-wrapper-modern">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.35-4.35"/>
+            <circle cx="11" cy="11" r="3"/>
+          </svg>
+        </div>
         <h3>Diagnosi accurata</h3>
-        <p>Visite strutturate, strumenti aggiornati e attenzione ai dettagli per inquadrare al meglio ogni problematica cutanea.</p>
+        <p>Visite strutturate, strumenti aggiornati e attenzione ai dettagli per inquadrare al meglio ogni problematica cutanea</p>
+        <div class="card-accent-line"></div>
       </div>
 
-      <div class="highlight-card fade-in-up" data-delay="0.2">
-        <div class="highlight-icon">✨</div>
+      <div class="highlight-card-modern fade-in-up" data-delay="0.2">
+        <div class="card-icon-wrapper-modern">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
         <h3>Trattamenti personalizzati</h3>
-        <p>Piani terapeutici su misura, costruiti sulle tue esigenze cliniche, estetiche e sul tuo stile di vita.</p>
+        <p>Piani terapeutici su misura, costruiti sulle tue esigenze cliniche, estetiche e sul tuo stile di vita</p>
+        <div class="card-accent-line"></div>
       </div>
 
-      <div class="highlight-card fade-in-up" data-delay="0.3">
-        <div class="highlight-icon">🤝</div>
-        <h3>Follow‑up continuativo</h3>
-        <p>Monitoraggio nel tempo, aggiustamenti della terapia e supporto costante per risultati stabili e duraturi.</p>
+      <div class="highlight-card-modern fade-in-up" data-delay="0.3">
+        <div class="card-icon-wrapper-modern">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <line x1="19" y1="8" x2="19" y2="14"/>
+            <line x1="22" y1="11" x2="16" y2="11"/>
+          </svg>
+        </div>
+        <h3>Follow-up continuativo</h3>
+        <p>Monitoraggio nel tempo, aggiustamenti della terapia e supporto costante per risultati stabili e duraturi</p>
+        <div class="card-accent-line"></div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- <section id="visite" class="section visite-flow-section">
   <div class="section__inner">
@@ -126,25 +335,49 @@
   </div>
 </section> -->
 
-<section id="visita-flow-visual" class="section visita-flow-visual-section">
-  <div class="section__inner">
-    <div class="visita-flow-scrolly">
-      <div class="visita-flow-layout">
-        <div class="visita-flow-column">
-          <div class="visita-flow-card flow-step-card" data-flow-step="1">
-            <div class="flow-step-badge">1</div>
-            <h3>Invia la tua richiesta</h3>
-            <p>Compili il modulo di contatto indicando il motivo della visita e i principali disturbi cutanei.</p>
-          </div>
-          <div class="visita-flow-card flow-step-card" data-flow-step="2">
-            <div class="flow-step-badge">2</div>
-            <h3>Programmiamo la visita</h3>
-            <p>Definiamo insieme data, orario e tipologia di visita più adatta alle tue esigenze.</p>
-          </div>
-        </div>
+<section id="visita-flow-visual" class="visita-flow-modern-section">
+  <div class="flow-modern-header">
+    <span class="section-badge-modern">Come funziona</span>
+    <h2 class="section-title-modern">Il tuo percorso verso una pelle sana</h2>
+    <p class="section-subtitle-modern">
+      Quattro semplici passaggi per iniziare il tuo trattamento dermatologico personalizzato
+    </p>
+  </div>
 
-        <div class="visita-flow-center">
-          <div class="visita-flow-image-shell">
+  <div class="visita-flow-scrolly">
+    <div class="visita-flow-layout-modern">
+      <div class="visita-flow-column-modern flow-column-left">
+        <div class="visita-flow-card-modern flow-step-card" data-flow-step="1">
+          <div class="card-number-modern">01</div>
+          <div class="card-icon-modern">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <h3>Invia la tua richiesta</h3>
+          <p>Compila il form indicando il motivo della visita e i principali disturbi cutanei</p>
+          <div class="card-glow-accent"></div>
+        </div>
+        
+        <div class="visita-flow-card-modern flow-step-card" data-flow-step="2">
+          <div class="card-number-modern">02</div>
+          <div class="card-icon-modern">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <h3>Programmiamo la visita</h3>
+          <p>Definiamo insieme data, orario e tipologia di visita più adatta a te</p>
+          <div class="card-glow-accent"></div>
+        </div>
+      </div>
+
+      <div class="visita-flow-center-modern">
+        <div class="flow-image-container-modern">
+          <div class="image-frame-modern">
             <img src="assets/images/herohome2.png"
                  alt="Prenotazione visita dermatologica"
                  class="visita-flow-main-image is-active"
@@ -161,164 +394,198 @@
                  alt="Controlli e follow-up dermatologico"
                  class="visita-flow-main-image"
                  data-flow-step="4">
-
-            <div class="visita-flow-cloud cloud-1 is-visible" data-cloud-step="1"></div>
-            <div class="visita-flow-cloud cloud-2" data-cloud-step="2"></div>
-            <div class="visita-flow-cloud cloud-3" data-cloud-step="3"></div>
-            <div class="visita-flow-cloud cloud-4" data-cloud-step="4"></div>
+            
+            <div class="image-gradient-overlay"></div>
+            <div class="image-border-glow"></div>
           </div>
-        </div>
-
-        <div class="visita-flow-column">
-          <div class="visita-flow-card flow-step-card" data-flow-step="3">
-            <div class="flow-step-badge">3</div>
-            <h3>Descriviamo la tua pelle</h3>
-            <p>Durante la visita analizziamo nel dettaglio pelle, unghie e cuoio capelluto per definire la diagnosi.</p>
-          </div>
-          <div class="visita-flow-card flow-step-card" data-flow-step="4">
-            <div class="flow-step-badge">4</div>
-            <h3>Ricevi il tuo piano</h3>
-            <p>Ottieni indicazioni chiare su terapia, prodotti e controlli futuri, con la possibilità di follow‑up.</p>
+          
+          <!-- Progress indicator -->
+          <div class="flow-progress-indicator">
+            <div class="progress-dot" data-step="1"></div>
+            <div class="progress-dot" data-step="2"></div>
+            <div class="progress-dot" data-step="3"></div>
+            <div class="progress-dot" data-step="4"></div>
           </div>
         </div>
       </div>
 
-      <div class="visita-flow-progress">
-        <div class="visita-flow-trigger" data-flow-step="1"></div>
-        <div class="visita-flow-trigger" data-flow-step="2"></div>
-        <div class="visita-flow-trigger" data-flow-step="3"></div>
-        <div class="visita-flow-trigger" data-flow-step="4"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="focus-pelle" class="section focus-pelle-section">
-  <div class="section__inner">
-    <div class="section__header reveal-on-scroll" data-delay="0.1">
-      <h2 class="section__title">Aree di maggiore attenzione</h2>
-      <p class="section__subtitle">Alcune delle principali condizioni dermatologiche che tratto più frequentemente in studio.</p>
-    </div>
-
-    <div class="focus-grid">
-      <div class="focus-card fade-in-up" data-delay="0.1">
-        <h3>Acne e impurità</h3>
-        <p>Gestione di acne giovanile e dell’adulto, cicatrici e brufoletti ricorrenti con protocolli mirati e combinati.</p>
-        <a href="/Sito-web/servizi" class="focus-link">Scopri i percorsi dedicati →</a>
-      </div>
-
-      <div class="focus-card fade-in-up" data-delay="0.2">
-        <h3>Macchie, fotoaging e melasma</h3>
-        <p>Valutazione delle discromie cutanee e piani di trattamento per uniformare il colorito e migliorare la texture.</p>
-        <a href="/Sito-web/servizi" class="focus-link">Approfondisci i trattamenti →</a>
-      </div>
-
-      <div class="focus-card fade-in-up" data-delay="0.3">
-        <h3>Nei e prevenzione melanoma</h3>
-        <p>Controllo dei nevi, mappatura e monitoraggio nel tempo per una prevenzione mirata e consapevole.</p>
-        <a href="/Sito-web/servizi" class="focus-link">Parliamo di prevenzione →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="stories" class="section stories-section">
-  <div class="section__inner">
-    <div class="section__header reveal-on-scroll" data-delay="0.1">
-      <h2 class="section__title">Storie di chi si è affidato a me</h2>
-      <p class="section__subtitle">Ogni pelle racconta una storia diversa. Qui trovi alcune esperienze di percorso dermatologico.</p>
-    </div>
-
-    <div class="stories-grid">
-      <article class="story-card fade-in-up" data-delay="0.1">
-        <p class="story-text">
-          “Dopo anni di acne resistente ai trattamenti, finalmente ho trovato un approccio chiaro e graduale.
-          La pelle è migliorata e mi sento molto più sicura.”
-        </p>
-        <p class="story-author">Paziente, 26 anni</p>
-      </article>
-
-      <article class="story-card fade-in-up" data-delay="0.2">
-        <p class="story-text">
-          “Controllo nei veloce ma approfondito. Mi ha spiegato con calma cosa osservare e ogni quanto fare prevenzione.”
-        </p>
-        <p class="story-author">Paziente, 41 anni</p>
-      </article>
-
-      <article class="story-card fade-in-up" data-delay="0.3">
-        <p class="story-text">
-          “Avevo la pelle molto sensibile e reattiva. Con piccoli cambiamenti e una terapia mirata, arrossamenti e prurito
-          sono nettamente diminuiti.”
-        </p>
-        <p class="story-author">Paziente, 33 anni</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="cta-prenota" class="section cta-prenota-section">
-  <div class="section__inner">
-    <div class="cta-prenota-card reveal-on-scroll" data-delay="0.1">
-      <div class="cta-prenota-content">
-        <h2>Prenditi cura della tua pelle, a partire da oggi</h2>
-        <p>
-          Se hai dubbi, fastidi cutanei o semplicemente vuoi fare prevenzione, una visita dermatologica può fare la differenza.
-        </p>
-      </div>
-      <div class="cta-prenota-actions">
-        <a href="https://www.miodottore.it/" class="btn-primary btn-large">Prenota una visita</a>
-        <button type="button" class="btn-secondary btn-large" (click)="scriviWhatsApp()">
-          Scrivimi su WhatsApp
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contatti" class="section contact-modern-section">
-  <div class="section__inner contact-modern-layout">
-    <div class="contact-modern-text reveal-on-scroll" data-delay="0.1">
-      <div class="quote-container">
-        <div class="quote-icon">💚</div>
-        <blockquote class="quote-text">
-          "Prendersi cura della propria pelle significa prendersi cura di sé: ogni percorso di trattamento è unico, come ogni persona."
-        </blockquote>
-        <div class="quote-decoration">
-          <div class="decoration-line"></div>
-          <div class="decoration-dot"></div>
-          <div class="decoration-line"></div>
+      <div class="visita-flow-column-modern flow-column-right">
+        <div class="visita-flow-card-modern flow-step-card" data-flow-step="3">
+          <div class="card-number-modern">03</div>
+          <div class="card-icon-modern">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <h3>Descriviamo la tua pelle</h3>
+          <p>Analizziamo nel dettaglio pelle, unghie e cuoio capelluto per la diagnosi</p>
+          <div class="card-glow-accent"></div>
         </div>
-        <p class="quote-author">— Dott.ssa Chiara Del Re</p>
+        
+        <div class="visita-flow-card-modern flow-step-card" data-flow-step="4">
+          <div class="card-number-modern">04</div>
+          <div class="card-icon-modern">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="12" y1="18" x2="12" y2="12"/>
+              <line x1="9" y1="15" x2="15" y2="15"/>
+            </svg>
+          </div>
+          <h3>Ricevi il tuo piano</h3>
+          <p>Indicazioni chiare su terapia, prodotti e controlli con follow-up dedicato</p>
+          <div class="card-glow-accent"></div>
+        </div>
       </div>
-      <p class="contact-modern-subtitle">
-        Se vuoi informazioni sulle visite, sui tempi o sulle disponibilità, puoi scrivermi direttamente dal form
-        oppure tramite WhatsApp.
+    </div>
+
+    <div class="visita-flow-progress">
+      <div class="visita-flow-trigger" data-flow-step="1"></div>
+      <div class="visita-flow-trigger" data-flow-step="2"></div>
+      <div class="visita-flow-trigger" data-flow-step="3"></div>
+      <div class="visita-flow-trigger" data-flow-step="4"></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="stories" class="stories-section-modern">
+  <div class="stories-container-modern">
+    <div class="stories-header-modern reveal-on-scroll" data-delay="0.1">
+      <span class="section-badge-modern">Testimonianze</span>
+      <h2 class="section-title-modern">Storie di chi si è affidato a me</h2>
+      <p class="section-subtitle-modern">
+        Ogni pelle racconta una storia diversa. Ecco alcune esperienze di percorso dermatologico
       </p>
     </div>
 
-    <div class="contact-modern-form reveal-on-scroll" data-delay="0.2">
-      <form action="https://formsubmit.co/nutrizionista.rasomariapia@gmail.com" method="POST" target="_blank" #contactForm>
-        <div class="form-row">
-          <input type="text" name="name" placeholder="Nome" required #nameInput>
-          <input type="email" name="email" placeholder="Email" required #emailInput>
+    <div class="stories-grid-modern">
+      <article class="story-card-modern fade-in-up" data-delay="0.1">
+        <div class="quote-icon-modern">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+          </svg>
         </div>
-
-        <textarea name="message" placeholder="Come posso aiutarti?" required #messageInput></textarea>
-        
-        <!-- Hidden inputs necessari per FormSubmit -->
-        <input type="hidden" name="_subject" value="Nuovo messaggio dal sito">
-        <input type="hidden" name="_autoresponse" value="Grazie per averci contattato! Ti risponderemo presto.">
-
-        <label class="privacy-label">
-          <input type="checkbox" name="privacy" required #privacyCheckbox>
-          Ho letto e accetto la <a href="/Sito-web/privacy-policy" target="_blank">Privacy Policy</a>
-        </label>
-
-        <div class="form-actions">
-          <button class="btn-primary" type="submit">Invia richiesta</button>
-          <button class="btn-secondary" type="button" (click)="scriviWhatsApp()">Scrivimi su WhatsApp</button>
+        <p class="story-text-modern">
+          Dopo anni di acne resistente ai trattamenti, finalmente ho trovato un approccio chiaro e graduale.
+          La pelle è migliorata e mi sento molto più sicura.
+        </p>
+        <div class="story-footer-modern">
+          <div class="story-avatar-modern">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div class="story-author-modern">
+            <p class="author-name">Paziente</p>
+            <p class="author-age">26 anni</p>
+          </div>
         </div>
-      </form>
+        <div class="card-gradient-bg"></div>
+      </article>
+
+      <article class="story-card-modern fade-in-up" data-delay="0.2">
+        <div class="quote-icon-modern">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+          </svg>
+        </div>
+        <p class="story-text-modern">
+          Controllo nei veloce ma approfondito. Mi ha spiegato con calma cosa osservare e ogni quanto fare prevenzione.
+        </p>
+        <div class="story-footer-modern">
+          <div class="story-avatar-modern">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div class="story-author-modern">
+            <p class="author-name">Paziente</p>
+            <p class="author-age">41 anni</p>
+          </div>
+        </div>
+        <div class="card-gradient-bg"></div>
+      </article>
+
+      <article class="story-card-modern fade-in-up" data-delay="0.3">
+        <div class="quote-icon-modern">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+          </svg>
+        </div>
+        <p class="story-text-modern">
+          Avevo la pelle molto sensibile e reattiva. Con piccoli cambiamenti e una terapia mirata, arrossamenti e prurito
+          sono nettamente diminuiti.
+        </p>
+        <div class="story-footer-modern">
+          <div class="story-avatar-modern">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div class="story-author-modern">
+            <p class="author-name">Paziente</p>
+            <p class="author-age">33 anni</p>
+          </div>
+        </div>
+        <div class="card-gradient-bg"></div>
+      </article>
+    </div>
+    <br>
+    <button type="button" class="btn-cta-review" (click)="apriRecensioni()">
+
+      <span>Scopri cosa dicono di me</span>
+    </button>  </div>
+</section>
+
+
+<section id="cta-prenota" class="cta-section-modern">
+  <div class="cta-container-modern reveal-on-scroll" data-delay="0.1">
+    <div class="cta-decoration cta-decoration--left"></div>
+    <div class="cta-decoration cta-decoration--right"></div>
+    
+    <div class="cta-content-modern">
+      <div class="cta-icon-modern">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+      <h2 class="cta-title-modern">
+        Prenditi cura della tua pelle, <br>
+        <span class="gradient-text-inline">a partire da oggi</span>
+      </h2>
+      <p class="cta-subtitle-modern">
+        Se hai dubbi, problematiche dermatologiche o semplicemente vuoi fare prevenzione, 
+        una visita dermatologica può fare la differenza
+      </p>
+      <div class="cta-actions-modern">
+        <a href="https://www.miodottore.it/" class="btn-cta-primary">
+          <span>Prenota una visita</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+        </a>
+        <button type="button" class="btn-cta-secondary" (click)="scriviWhatsApp()">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          <span>Scrivimi su WhatsApp</span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="cta-particles">
+      <div class="cta-particle"></div>
+      <div class="cta-particle"></div>
+      <div class="cta-particle"></div>
     </div>
   </div>
 </section>

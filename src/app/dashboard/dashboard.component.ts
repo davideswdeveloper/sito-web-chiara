@@ -146,6 +146,11 @@ scriviWhatsApp() {
 }
 
 
+apriRecensioni(){
+  window.open(`https://www.miodottore.it/chiara-del-re-2/dermatologo/palmi#profile-reviews`, '_blank');
+
+}
+
   
 
 onSubmit(event: Event) {
@@ -197,10 +202,21 @@ onSubmit(event: Event) {
     const stepCards = Array.from(this.document.querySelectorAll<HTMLElement>('.flow-step-card'));
     const images = Array.from(this.document.querySelectorAll<HTMLElement>('.visita-flow-main-image'));
     const clouds = Array.from(this.document.querySelectorAll<HTMLElement>('.visita-flow-cloud'));
+    const progressDots = Array.from(this.document.querySelectorAll<HTMLElement>('.progress-dot'));
+
+    console.log('🔍 Inizializzazione Flow Visual:', {
+      section: section ? 'trovata' : 'NON trovata',
+      stepCards: stepCards.length,
+      images: images.length,
+      progressDots: progressDots.length
+    });
 
     if (!section || stepCards.length === 0 || images.length === 0) {
+      console.log('❌ Flow Visual NON inizializzato - elementi mancanti');
       return;
     }
+
+    console.log('✅ Flow Visual inizializzato correttamente');
 
     const setVisualState = (stepNumber: number) => {
       // attiva le card fino allo step corrente
@@ -230,6 +246,16 @@ onSubmit(event: Event) {
           cloud.classList.remove('is-visible');
         }
       });
+
+      // Aggiorna i progress dots
+      progressDots.forEach(dot => {
+        const dotStep = parseInt(dot.dataset['step'] || dot.getAttribute('data-step') || '0', 10);
+        if (dotStep === stepNumber) {
+          dot.classList.add('is-active');
+        } else {
+          dot.classList.remove('is-active');
+        }
+      });
     };
 
     const onScroll = () => {
@@ -256,15 +282,19 @@ onSubmit(event: Event) {
         stepNumber = 1;
       }
 
+      console.log('📊 Scroll Progress:', { progress: progress.toFixed(2), stepNumber, scrollY, sectionTop, sectionHeight });
+
       setVisualState(stepNumber);
     };
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
 
-    // Stato iniziale
-    setVisualState(1);
-    onScroll();
+    // Stato iniziale - imposta subito lo step 1
+    setTimeout(() => {
+      setVisualState(1);
+      onScroll();
+    }, 100);
   }
 
   private initMetodoScrollyAnimation(): void {

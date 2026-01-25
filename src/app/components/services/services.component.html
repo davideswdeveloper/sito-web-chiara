@@ -1,50 +1,26 @@
-<section class="hero">
-  <div class="hero-text">
-    <!-- Testo fisso -->
-    <h1 class="static-part">La salute</h1>
-
-    <!-- Parte dinamica: articolo + parola -->
-    <!-- <h1 class="dynamic-part">
-      <span class="article">{{ current.articolo }}</span>
-      @if(current.articolo === 'la' || current.articolo === 'il'){
-      <span class="highlight rotating-word">&nbsp;{{ current.parola }}</span>
-      }@else{
-        <span class="highlight rotating-word"> {{ current.parola }}</span>
-
-      }
-    </h1> -->
-    <h1 class = "highlight rotating-word">della tua pelle</h1>
-    <!-- Testo fisso finale -->
-    <h1 class="static-part">inizia qui.</h1>
-  
-    <p>
-      Un approccio dermatologico basato sull’ascolto e sulla valutazione clinica, con l’obiettivo di tutelare la salute della pelle nel tempo. Diagnosi accurate e trattamenti mirati, spiegati con chiarezza e pensati per essere applicabili nella pratica quotidiana.
-    </p>
-    <button class="cta" onclick="document.getElementById('servizi_con_foto').scrollIntoView({ behavior: 'smooth' })">
-      Scopri i Servizi
-    </button>
-      </div>
-
-  
-
-  <div class="hero-image">
-    <img src="assets/images/chiara.jpg " alt="Hero Image">
+<section class="services-hero">
+  <div class="hero-animations">
+    <div class="blur-circle blur-circle--1"></div>
+    <div class="blur-circle blur-circle--2"></div>
+    <div class="blur-circle blur-circle--3"></div>
   </div>
 
-
-
-
-
-
-
-  
- 
+  <div class="services-hero__container">
+    <div class="services-hero__content">
+      <span class="hero-tagline">Servizi Dermatologici</span>
+      <h1 class="services-hero__title">
+        La salute della tua <span class="text-gradient">pelle</span> inizia qui
+      </h1>
+      <p class="services-hero__subtitle">
+        Un approccio dermatologico basato sull'ascolto e sulla valutazione clinica. <br>
+        Diagnosi accurate e trattamenti mirati per la tua pelle.
+      </p>
+      <div class="hero-scroll-indicator">
+        <div class="mouse"></div>
+      </div>
+    </div>
+  </div>
 </section>
-<div class="custom-shape-divider-bottom-1751296690">
-  <svg data-name="Layer 1"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-  </svg>
-</div>
 
 
 
@@ -177,19 +153,3 @@
   </div>
 
 </section>
-
-
-
-<!-- <section class="services" id="servizi">
-  <div class="container">
-    <h2>I Miei Servizi</h2>
-    <div class="services-grid">
-      @for (service of services; track service.title) {
-        <div class="service-card">
-          <h3>{{ service.title }}</h3>
-          <p>{{ service.description }}</p>
-        </div>
-      }
-    </div>
-  </div>
-</section> -->
