@@ -30,7 +30,7 @@ export class ContattiComponent {
     },
     {
       name: 'Medipol',
-      address: 'Viale Aldo Moro 1',
+      address: 'Viale Aldo Moro snc',
       city: 'Falerna'
     },
     {
