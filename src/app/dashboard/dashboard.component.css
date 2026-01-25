@@ -1381,23 +1381,23 @@
   position: -webkit-sticky;
   /* Safari support */
   position: sticky;
-  top: 50vh;
-  transform: translateY(-50%);
-  margin-bottom: 0px;
-  /* Distanza dal top quando si blocca */
+  top: 0;
+  height: 100vh;
+  /* Occupy full viewport height for centering */
   display: grid;
   grid-template-columns: 1fr 1.2fr 1fr;
+  align-content: center;
+  /* Center grid content vertically */
   gap: 40px;
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 40px 0 80px;
+  padding: 0;
+  /* Removed padding */
   will-change: transform;
   z-index: 1;
   background: #ffffff;
-  /* Background per evitare trasparenze durante lo scroll */
   min-height: 600px;
-  /* Altezza minima per evitare collasso */
 }
 
 /* Trigger invisibili per gestire lo scroll */
