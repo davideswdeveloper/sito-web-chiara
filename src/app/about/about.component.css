@@ -915,41 +915,128 @@
   }
 
   .studies-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .text-card {
     padding: 40px;
   }
+
+  .hero-image-container {
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 768px) {
   .modern-hero {
-    padding: 80px 20px 60px;
+    padding: 100px 20px 60px;
     min-height: auto;
+    margin-top: 60px;
   }
 
   .hero-content {
-    gap: 40px;
+    gap: 30px;
+  }
+
+  .hero-text-wrapper {
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 24px;
+  }
+
+  .hero-cta {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-scroll {
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+
+  .hero-image-container {
+    max-width: 260px;
   }
 
   .about-section-modern,
   .studies-section-modern,
   .method-section-modern,
   .cta-section-modern {
-    padding: 80px 20px;
+    padding: 60px 16px;
   }
 
   .section-header {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    padding: 6px 18px;
+  }
+
+  .section-title {
+    font-size: 2rem;
   }
 
   .text-card {
-    padding: 30px;
+    padding: 28px 20px;
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+  }
+
+  .highlight-box {
+    padding: 18px;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
   }
 
   .studies-grid {
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .study-card {
+    padding: 28px 20px;
+  }
+
+  .study-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .study-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .study-card p {
+    font-size: 0.95rem;
+  }
+
+  .method-content {
+    gap: 40px;
+    padding: 40px 16px;
+  }
+
+  .method-image-wrapper {
+    transform: none;
+  }
+
+  .method-description {
+    padding-left: 20px;
+  }
+
+  .method-description p {
+    font-size: 1.05rem;
   }
 
   .step-item {
@@ -964,22 +1051,170 @@
   .floating-shapes {
     display: none;
   }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  /* CTA Section */
+  .cta-content {
+    padding: 0 16px;
+  }
+
+  .cta-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 24px;
+  }
+
+  .cta-title {
+    font-size: 1.8rem;
+  }
+
+  .cta-text {
+    font-size: 1.1rem;
+    margin-bottom: 28px;
+  }
+
+  .btn-modern {
+    padding: 16px 32px;
+    font-size: 1.05rem;
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .image-wrapper-modern img {
+    width: 100%;
+    height: auto;
+  }
+
+  .image-overlay {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @media (max-width: 480px) {
+  .modern-hero {
+    padding: 90px 16px 50px;
+  }
+
   .hero-title {
     font-size: 2rem;
   }
 
+  .highlight {
+    font-size: inherit;
+  }
+
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  .btn-scroll {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+
+  .hero-image-container {
+    max-width: 220px;
+  }
+
+  .about-section-modern,
+  .studies-section-modern,
+  .method-section-modern,
+  .cta-section-modern {
+    padding: 40px 12px;
+  }
+
+  .section-header {
+    margin-bottom: 32px;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.7rem;
+  }
+
+  .text-card {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
   }
 
   .intro-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .highlight-box {
+    padding: 16px;
+  }
+
+  .highlight-box p {
+    font-size: 1rem;
+  }
+
+  .study-card {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+
+  .study-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .study-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .study-card p {
+    font-size: 0.9rem;
+  }
+
+  .method-content {
+    gap: 32px;
+    padding: 32px 12px;
+  }
+
+  .method-badge {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+
+  .method-description {
+    padding-left: 16px;
+    border-left-width: 2px;
+  }
+
+  .method-description p {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+
+  .cta-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+  }
+
+  .cta-title {
+    font-size: 1.5rem;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  .btn-modern {
+    padding: 14px 28px;
+    font-size: 1rem;
   }
 }

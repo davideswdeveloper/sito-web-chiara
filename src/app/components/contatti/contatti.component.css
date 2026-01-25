@@ -162,10 +162,71 @@
   /* Adattamento Responsive */
   @media (max-width: 768px) {
     .contact-hero {
-      min-height: 60vh;
+      min-height: auto;
+      height: auto;
+      padding: 100px 20px 60px;
+      margin-top: 60px;
     }
+
+    .contact-hero__title {
+      font-size: 2.2rem;
+    }
+
+    .contact-hero__subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+    }
+
+    .hero-tagline {
+      font-size: 0.8rem;
+      padding: 6px 14px;
+    }
+
     .blur-circle {
       filter: blur(50px);
+    }
+
+    .blur-circle--1 {
+      width: 250px;
+      height: 250px;
+    }
+
+    .blur-circle--2 {
+      width: 180px;
+      height: 180px;
+    }
+
+    .blur-circle--3 {
+      width: 150px;
+      height: 150px;
+    }
+
+    .hero-scroll-indicator {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-hero {
+      padding: 90px 16px 50px;
+    }
+
+    .contact-hero__title {
+      font-size: 1.8rem;
+    }
+
+    .contact-hero__subtitle {
+      font-size: 1rem;
+    }
+
+    .hero-tagline {
+      font-size: 0.75rem;
+      padding: 5px 12px;
+      margin-bottom: 16px;
+    }
+
+    .blur-circle {
+      display: none;
     }
   }
 
@@ -505,108 +566,178 @@
    RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
-  .contact-hero {
-    min-height: 40vh;
-  }
-
-  .contact-hero__content {
-    padding: 40px 20px;
-  }
-
-  .locations-section,
-  .contact-section {
+  .locations-section {
     padding: 60px 16px;
+  }
+
+  .locations-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .location-card-modern {
+    padding: 28px 20px;
+    min-height: auto;
+    border-radius: 24px;
+  }
+
+  .card-visual {
+    margin-bottom: 20px;
+  }
+
+  .icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+  }
+
+  .location-name {
+    font-size: 1.4rem;
+  }
+
+  .address-tag {
+    font-size: 0.95rem;
+  }
+
+  .card-footer {
+    margin-top: 24px;
   }
 
   .section__header {
     margin-bottom: 40px;
   }
 
-  .location-card {
-    padding: 24px 20px;
-  }
-
-  .location-card__icon {
-    width: 48px;
-    height: 48px;
-  }
-
-  .location-card__icon svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  .location-card__title {
-    font-size: 1.2rem;
-  }
-
-  .action-card {
-    padding: 32px 24px;
-  }
-
-  .action-card__icon {
-    width: 64px;
-    height: 64px;
-  }
-
-  .action-card__icon svg {
-    width: 32px;
-    height: 32px;
-  }
-
-  .action-card__title {
-    font-size: 1.2rem;
-  }
-
-  .contact-form {
-    padding: 32px 24px;
-  }
-
-  .form-title {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-hero__title {
+  .section-title {
     font-size: 2rem;
   }
 
-  .contact-hero__subtitle {
+  .section-subtitle {
     font-size: 1rem;
-  }
-
-  .section__title {
-    font-size: 1.8rem;
-  }
-
-  .section__subtitle {
-    font-size: 1rem;
-  }
-
-  .locations-section,
-  .contact-section {
-    padding: 40px 16px;
-  }
-
-  .location-card {
-    padding: 20px 16px;
-    gap: 12px;
-  }
-
-  .action-card {
-    padding: 28px 20px;
-    gap: 16px;
   }
 
   .contact-form {
-    padding: 24px 20px;
-    gap: 20px;
+    padding: 32px 20px;
+    border-radius: 20px;
+  }
+
+  .form-title {
+    font-size: 1.4rem;
+    margin-bottom: 24px;
   }
 
   .form-input,
   .form-textarea {
     padding: 14px 16px;
+    font-size: 1rem;
+  }
+
+  .checkbox-inline {
+    font-size: 0.9rem;
+  }
+
+  .btn-submit {
+    padding: 14px 24px;
+    font-size: 1rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .locations-section {
+    padding: 40px 12px;
+  }
+
+  .locations-grid {
+    gap: 16px;
+  }
+
+  .location-card-modern {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+
+  .card-visual {
+    margin-bottom: 16px;
+  }
+
+  .icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .card-number {
+    font-size: 2.5rem;
+  }
+
+  .location-name {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .address-tag {
+    font-size: 0.9rem;
+  }
+
+  .city-tag {
+    font-size: 0.8rem;
+  }
+
+  .card-footer {
+    margin-top: 20px;
+  }
+
+  .action-text {
+    font-size: 0.85rem;
+  }
+
+  .arrow-circle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .section__header {
+    margin-bottom: 32px;
+    padding: 0 8px;
+  }
+
+  .section-badge {
+    font-size: 0.7rem;
+    padding: 6px 14px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .contact-form {
+    padding: 24px 16px;
+    border-radius: 18px;
+  }
+
+  .form-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+  }
+
+  .checkbox-inline {
+    font-size: 0.85rem;
+  }
+
+  .btn-submit {
+    padding: 12px 20px;
+    font-size: 0.95rem;
   }
 }
 
@@ -871,25 +1002,191 @@
 
 /* --- RESPONSIVE --- */
 @media (max-width: 992px) {
+  .contact-section-modern {
+    padding: 60px 16px;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 40px;
   }
+
   .form-glass-container {
-    padding: 30px;
+    padding: 32px 24px;
+    border-radius: 28px;
+  }
+
+  .section-header-left {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .section-title-small {
+    font-size: 2rem;
+  }
+
+  .contact-actions-vertical {
+    gap: 16px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .contact-section-modern {
+    padding: 50px 16px;
+  }
+
+  .contact-grid {
+    gap: 32px;
+  }
+
+  .minimal-action-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .minimal-icon,
+  .minimal-icon-whatsapp {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    margin-right: 16px;
+  }
+
+  .minimal-text h3 {
+    font-size: 1rem;
+  }
+
+  .minimal-text p {
+    font-size: 0.85rem;
+  }
+
+  .form-glass-container {
+    padding: 28px 20px;
+    border-radius: 24px;
+  }
+
+  .form-modern-title {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+
   .input-row {
     grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
   }
+
+  .input-group input,
+  .input-group textarea {
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 1rem;
+  }
+
+  .input-group textarea {
+    min-height: 120px;
+    margin-bottom: 16px;
+  }
+
   .form-footer {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 16px;
   }
+
+  .custom-checkbox {
+    font-size: 0.9rem;
+  }
+
   .btn-glow-submit {
     width: 100%;
+    padding: 16px 28px;
+    font-size: 1rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section-modern {
+    padding: 40px 12px;
+  }
+
+  .section-header-left {
+    margin-bottom: 24px;
+  }
+
+  .section-badge {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+  }
+
+  .section-title-small {
+    font-size: 1.6rem;
+  }
+
+  .section-desc {
+    font-size: 0.95rem;
+  }
+
+  .contact-actions-vertical {
+    gap: 12px;
+  }
+
+  .minimal-action-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .minimal-icon,
+  .minimal-icon-whatsapp {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    margin-right: 12px;
+  }
+
+  .minimal-icon-whatsapp svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .minimal-text h3 {
+    font-size: 0.95rem;
+  }
+
+  .minimal-text p {
+    font-size: 0.8rem;
+  }
+
+  .form-glass-container {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+
+  .form-modern-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+  }
+
+  .input-group textarea {
+    min-height: 100px;
+    margin-bottom: 14px;
+  }
+
+  .custom-checkbox {
+    font-size: 0.85rem;
+  }
+
+  .btn-glow-submit {
+    padding: 14px 24px;
+    font-size: 0.95rem;
   }
 }
 
