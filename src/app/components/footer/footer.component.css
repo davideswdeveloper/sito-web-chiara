@@ -141,7 +141,73 @@
 .legal-links { margin-top: 6px; font-size: 0.98rem; }
 .copyright { margin-top: 2px; color: #4b5563; font-size: 0.95rem; }
 
+@media (max-width: 768px) {
+  .footer-minimal {
+    padding: 0 16px;
+  }
+
+  .footer-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .footer-text p {
+    margin: 8px 0;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .footer-text p:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .site-footer.minimal {
+    padding: 24px 12px;
+  }
+}
+
 @media (max-width: 600px) {
-  .footer-minimal { grid-template-columns: 1fr; text-align: center; }
-  .footer-logo-onb { justify-self: center; }
+  .footer-minimal { 
+    grid-template-columns: 1fr; 
+    text-align: center; 
+  }
+  
+  .footer-logo-onb { 
+    justify-self: center; 
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
+
+  .legal-links {
+    font-size: 0.9rem;
+  }
+
+  .copyright {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer.minimal {
+    padding: 20px 10px;
+  }
+
+  .footer-text {
+    font-size: 0.85rem;
+  }
+
+  .footer-text p {
+    margin: 6px 0;
+  }
+
+  .legal-links,
+  .copyright {
+    font-size: 0.8rem;
+  }
 }

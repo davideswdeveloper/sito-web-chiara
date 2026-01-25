@@ -971,40 +971,117 @@
 @media (max-width: 768px) {
   .home-hero-modern {
     min-height: auto;
-    padding: 60px 0;
+    padding: 100px 0 60px;
+    margin-top: 60px;
   }
 
   .home-hero-modern__container {
-    padding: 0 24px;
-    gap: 40px;
+    padding: 0 20px;
+    gap: 30px;
   }
 
   .hero-main-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle-modern {
+    font-size: 1.1rem;
   }
 
   .hero-cta-group {
     flex-direction: column;
     width: 100%;
+    gap: 12px;
   }
 
   .btn-hero-primary,
   .btn-hero-secondary {
     width: 100%;
     justify-content: center;
+    padding: 14px 24px;
+    font-size: 1rem;
   }
 
   .hero-stats {
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
   }
 
   .stat-divider {
     display: none;
   }
 
+  .stat-number {
+    font-size: 2rem;
+  }
+
   .visual-frame {
     max-width: 100%;
+    padding: 10px;
+  }
+
+  .frame-decoration {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-scroll-hint {
+    display: none;
+  }
+
+  /* Nasconde i blob su mobile per performance */
+  .hero-blobs,
+  .hero-particles {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero-modern {
+    padding: 90px 0 40px;
+    margin-top: 60px;
+  }
+
+  .home-hero-modern__container {
+    padding: 0 16px;
+    gap: 24px;
+  }
+
+  .hero-badge {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+  }
+
+  .hero-main-title {
+    font-size: 2rem;
+    gap: 4px;
+  }
+
+  .title-line--1 {
+    font-size: 0.7em;
+  }
+
+  .hero-subtitle-modern {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .hero-image-modern {
+    border-radius: 20px;
   }
 }
 
@@ -2111,8 +2188,11 @@
   }
 
   .highlights-grid-modern,
-  .focus-grid-modern,
   .stories-grid-modern {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .focus-grid-modern {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -2124,8 +2204,9 @@
   .visita-flow-layout-modern {
     position: relative;
     top: auto;
+    transform: none;
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
     padding-bottom: 40px;
   }
 
@@ -2138,41 +2219,381 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  .visita-flow-center-modern {
+    order: -1;
+  }
+
+  .flow-progress-indicator {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
+  /* About Section */
+  .about-section-modern {
+    padding: 60px 16px;
+  }
+
+  .about-container-modern {
+    gap: 40px;
+  }
+
+  .about-title-modern {
+    font-size: 2rem;
+  }
+
+  .about-text-modern p {
+    font-size: 1rem;
+  }
+
+  .feature-item-modern {
+    padding: 12px;
+  }
+
+  .feature-item-modern span {
+    font-size: 0.9rem;
+  }
+
+  .about-image-wrapper-modern {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .image-decoration-modern {
+    width: 50px;
+    height: 50px;
+  }
+
+  .decoration-1 {
+    top: -10px;
+    left: -10px;
+  }
+
+  .decoration-2 {
+    bottom: -10px;
+    right: -10px;
+  }
+
+  /* Highlights Section */
+  .highlights-section-modern {
+    padding: 60px 16px;
+  }
 
   .highlights-grid-modern,
-  .focus-grid-modern,
   .stories-grid-modern {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .highlight-card-modern {
+    padding: 28px 24px;
+  }
+
+  .highlight-card-modern h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Focus Section */
+  .focus-section-modern {
+    padding: 60px 16px;
+  }
+
+  .focus-grid-modern {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .focus-card-modern {
+    padding: 28px 24px;
+  }
+
+  .focus-card-modern h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Visita Flow Section */
+  .visita-flow-modern-section {
+    padding: 60px 16px 0;
+  }
+
+  .flow-modern-header {
+    margin-bottom: 30px;
+  }
+
+  .visita-flow-layout-modern {
+    gap: 24px;
+    padding: 20px 0 40px;
+    min-height: auto;
+  }
+
+  .visita-flow-card-modern {
+    padding: 24px 20px;
+    max-width: 100%;
+  }
+
+  .card-number-modern {
+    font-size: 2rem;
+  }
+
+  .card-icon-modern {
+    width: 48px;
+    height: 48px;
+  }
+
+  .visita-flow-card-modern h3 {
+    font-size: 1.1rem;
+  }
+
+  .visita-flow-card-modern p {
+    font-size: 0.95rem;
+  }
+
+  .image-frame-modern {
+    height: 350px;
+    border-radius: 24px;
+  }
+
+  /* Stories Section */
+  .stories-section-modern {
+    padding: 60px 16px;
+  }
+
+  .story-card-modern {
+    padding: 28px 24px;
+  }
+
+  .story-text-modern {
+    font-size: 1rem;
+  }
+
+  /* CTA Section */
+  .cta-section-modern {
+    padding: 60px 16px;
   }
 
   .cta-container-modern {
-    padding: 48px 32px;
+    padding: 40px 24px;
+    border-radius: 28px;
   }
 
   .cta-actions-modern {
     flex-direction: column;
     width: 100%;
+    gap: 12px;
   }
 
   .btn-cta-primary,
   .btn-cta-secondary {
     width: 100%;
     justify-content: center;
+    padding: 14px 24px;
+  }
+
+  .cta-icon-modern {
+    width: 56px;
+    height: 56px;
+  }
+
+  .cta-decoration {
+    display: none;
   }
 
   .about-features-modern {
     width: 100%;
   }
 
-  .flow-modern-header {
-    margin-bottom: 40px;
-  }
-
   .flow-image-container-modern {
     max-width: 100%;
+  }
+
+  .btn-modern-outline {
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
+
+  /* Section titles */
+  .section-title-modern {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle-modern {
+    font-size: 1rem;
+  }
+
+  .section-badge-modern {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* About Section */
+  .about-section-modern {
+    padding: 40px 12px;
+  }
+
+  .about-title-modern {
+    font-size: 1.6rem;
+  }
+
+  .about-text-modern p {
+    font-size: 0.95rem;
+  }
+
+  .feature-item-modern {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .feature-item-modern svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .feature-item-modern span {
+    font-size: 0.85rem;
+  }
+
+  .btn-modern-outline {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about-image-wrapper-modern {
+    max-width: 250px;
+  }
+
+  /* Highlights & Focus */
+  .highlights-section-modern,
+  .focus-section-modern {
+    padding: 40px 12px;
+  }
+
+  .highlight-card-modern,
+  .focus-card-modern {
+    padding: 24px 18px;
+  }
+
+  .card-icon-wrapper-modern,
+  .focus-icon-modern {
+    width: 56px;
+    height: 56px;
+  }
+
+  .highlight-card-modern h3,
+  .focus-card-modern h3 {
+    font-size: 1.2rem;
+  }
+
+  .highlight-card-modern p,
+  .focus-card-modern p {
+    font-size: 0.95rem;
+  }
+
+  /* Visita Flow */
+  .visita-flow-modern-section {
+    padding: 40px 12px 0;
+  }
+
+  .visita-flow-card-modern {
+    padding: 20px 16px;
+  }
+
+  .card-number-modern {
+    font-size: 1.8rem;
+    top: 14px;
+    right: 14px;
+  }
+
+  .card-icon-modern {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .visita-flow-card-modern h3 {
+    font-size: 1rem;
+  }
+
+  .visita-flow-card-modern p {
+    font-size: 0.9rem;
+  }
+
+  .image-frame-modern {
+    height: 280px;
+    border-radius: 20px;
+  }
+
+  /* Stories */
+  .stories-section-modern {
+    padding: 40px 12px;
+  }
+
+  .story-card-modern {
+    padding: 24px 18px;
+    gap: 18px;
+  }
+
+  .quote-icon-modern {
+    width: 40px;
+    height: 40px;
+  }
+
+  .story-text-modern {
+    font-size: 0.95rem;
+  }
+
+  .btn-cta-review {
+    padding: 14px 24px;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  /* CTA */
+  .cta-section-modern {
+    padding: 40px 12px;
+  }
+
+  .cta-container-modern {
+    padding: 32px 18px;
+    border-radius: 24px;
+  }
+
+  .cta-icon-modern {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .cta-icon-modern svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .cta-title-modern {
+    font-size: 1.5rem;
+  }
+
+  .cta-subtitle-modern {
+    font-size: 0.95rem;
+  }
+
+  .btn-cta-primary,
+  .btn-cta-secondary {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  /* General */
+  .section-title-modern {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle-modern {
+    font-size: 0.95rem;
   }
 }
 
@@ -3805,6 +4226,60 @@ form button:active {
   .cta-prenota-card {
     padding: 32px 24px;
   }
+
+  .dashboard-feature-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .dashboard-blob {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section-nutrition {
+    margin-top: 60px;
+    padding: 60px 16px 100px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .hero-image img {
+    max-width: 280px;
+  }
+
+  .dashboard-feature-section {
+    margin: 32px 0 0 0;
+  }
+
+  .dashboard-feature-content {
+    padding: 24px 16px;
+    gap: 24px;
+  }
+
+  .dashboard-feature-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .dashboard-feature-text p {
+    font-size: 1rem;
+  }
+
+  .dashboard-blob {
+    width: 220px;
+    height: 220px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -3821,5 +4296,40 @@ form button:active {
 
   .form-row {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section-nutrition {
+    margin-top: 60px;
+    padding: 40px 12px 80px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.7rem;
+    margin-bottom: 14px;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .btn-primary {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+
+  .hero-image img {
+    max-width: 240px;
+  }
+
+  .dashboard-feature-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-blob {
+    width: 180px;
+    height: 180px;
   }
 }

@@ -348,15 +348,18 @@ a:hover {
 
   .nav-links {
     display: none;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
+    height: 100vh;
     background: linear-gradient(135deg, #A05C66 0%, #B86A6A 50%, #D6949D 100%);
-    padding: 1rem 0;
+    padding: 100px 2rem 2rem;
     box-shadow: 0 4px 15px rgba(79, 119, 99, 0.3);
     flex-direction: column;
     align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
   }
 
   .nav-links.active {
@@ -364,6 +367,113 @@ a:hover {
   }
 
   .nav-links li {
-    margin: 1rem 0;
+    margin: 0.8rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+  }
+
+  .logo-image {
+    height: 50px;
+  }
+
+  .main-nav {
+    height: auto;
+    min-height: 60px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    height: 40px;
+  }
+
+  .main-nav {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .nav-links {
+    padding: 90px 1.5rem 2rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
+}
+
+/* ================= Global Mobile Utilities ================= */
+@media (max-width: 768px) {
+  /* Prevent horizontal overflow */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Ensure images don't overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Fix fixed header spacing */
+  .header {
+    height: auto;
+    min-height: 60px;
+  }
+
+  /* Container padding adjustment */
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Hero section adjustments */
+  .hero {
+    margin-top: 60px;
+    min-height: auto;
+    height: auto;
+  }
+
+  /* Services grid on mobile */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Container smaller padding */
+  .container {
+    padding: 0 12px;
+  }
+
+  /* Smaller touch targets */
+  button, .btn, .cta-button {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  /* Fix text overflow */
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  p {
+    word-wrap: break-word;
   }
 }
