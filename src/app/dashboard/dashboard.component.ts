@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, Inject, PLATFORM_ID, ViewChild, ElementRef } from '@angular/core';
 import { isPlatformBrowser, DOCUMENT, CommonModule } from '@angular/common';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../components/header/header.component';
 import { HeroComponent } from '../components/hero/hero.component';
 import { ReceiptsComponent } from '../components/receipts/receipts.component';
@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [ ReceiptsComponent, CommonModule],
+  imports: [ReceiptsComponent, CommonModule, RouterLink],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
@@ -27,7 +27,7 @@ export class DashboardComponent implements AfterViewInit {
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(DOCUMENT) private document: Document,
     private router: Router
-  ) {}
+  ) { }
 
   ngAfterViewInit(): void {
     if (!isPlatformBrowser(this.platformId)) {
@@ -59,8 +59,8 @@ export class DashboardComponent implements AfterViewInit {
     const updatePlateAnimation = (stepNumber: number) => {
       // Mappa degli step: 1=Base, 2=Carboidrati, 3=Proteine, 4=Verdure, 5=Completo
       let endDeg = 0;
-      
-      switch(stepNumber) {
+
+      switch (stepNumber) {
         case 1: // Base di partenza
           endDeg = 0;
           break;
@@ -115,49 +115,49 @@ export class DashboardComponent implements AfterViewInit {
   }
 
 
-  
-formData = {
-  name: '',
-  email: '',
-  message: ''
-};
 
-scriviWhatsApp() {
-  // Seleziona la checkbox dal DOM
-  const privacyCheckbox = document.querySelector<HTMLInputElement>('input[name="privacy"]');
+  formData = {
+    name: '',
+    email: '',
+    message: ''
+  };
 
-  if (!privacyCheckbox?.checked) {
-    alert('Devi accettare la Privacy Policy per scrivere su WhatsApp!');
-    return; // blocca la funzione
+  scriviWhatsApp() {
+    // Seleziona la checkbox dal DOM
+    const privacyCheckbox = document.querySelector<HTMLInputElement>('input[name="privacy"]');
+
+    if (!privacyCheckbox?.checked) {
+      alert('Devi accettare la Privacy Policy per scrivere su WhatsApp!');
+      return; // blocca la funzione
+    }
+
+    // Leggi anche gli altri valori
+    const nameInput = document.querySelector<HTMLInputElement>('input[name="name"]');
+    const emailInput = document.querySelector<HTMLInputElement>('input[name="email"]');
+    const messageInput = document.querySelector<HTMLTextAreaElement>('textarea[name="message"]');
+
+    const nome = nameInput?.value || 'Anonimo';
+    const email = emailInput?.value ? ` Email: ${emailInput.value}.` : '';
+    const messaggio = messageInput?.value || '';
+
+    const testo = `Ciao, sono ${nome}. Ti contatto per: ${messaggio}.${email}`;
+    const phone = '393295840904';
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(testo)}`, '_blank');
   }
 
-  // Leggi anche gli altri valori
-  const nameInput = document.querySelector<HTMLInputElement>('input[name="name"]');
-  const emailInput = document.querySelector<HTMLInputElement>('input[name="email"]');
-  const messageInput = document.querySelector<HTMLTextAreaElement>('textarea[name="message"]');
 
-  const nome = nameInput?.value || 'Anonimo';
-  const email = emailInput?.value ? ` Email: ${emailInput.value}.` : '';
-  const messaggio = messageInput?.value || '';
+  apriRecensioni() {
+    window.open(`https://www.miodottore.it/chiara-del-re-2/dermatologo/palmi#profile-reviews`, '_blank');
 
-  const testo = `Ciao, sono ${nome}. Ti contatto per: ${messaggio}.${email}`;
-  const phone = '393295840904';
-  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(testo)}`, '_blank');
-}
+  }
 
 
-apriRecensioni(){
-  window.open(`https://www.miodottore.it/chiara-del-re-2/dermatologo/palmi#profile-reviews`, '_blank');
 
-}
-
-  
-
-onSubmit(event: Event) {
-  event.preventDefault(); // evita il reload della pagina
-  console.log('Dati salvati:', this.formData);
-  localStorage.setItem('contatto', JSON.stringify(this.formData));
-}
+  onSubmit(event: Event) {
+    event.preventDefault(); // evita il reload della pagina
+    console.log('Dati salvati:', this.formData);
+    localStorage.setItem('contatto', JSON.stringify(this.formData));
+  }
 
   private initVisiteScrollyAnimation(): void {
     const visiteSteps = Array.from(this.document.querySelectorAll<HTMLElement>('.visite-step'));
@@ -301,7 +301,7 @@ onSubmit(event: Event) {
     const metodoSteps = this.document.querySelectorAll('.metodo-step');
     const metodoStepTexts = this.document.querySelectorAll('.metodo-step-text');
     const metodoBgImages = this.document.querySelectorAll('.metodo-bg-image');
-    
+
     if (metodoSteps.length === 0) return;
 
     // Funzione per aggiornare gli step attivi
@@ -314,7 +314,7 @@ onSubmit(event: Event) {
           step.classList.remove('is-active');
         }
       });
-      
+
       // Nascondi tutte le immagini di sfondo
       metodoBgImages.forEach((image, index) => {
         if (index === stepNumber) {
@@ -381,7 +381,7 @@ onSubmit(event: Event) {
     if (!isPlatformBrowser(this.platformId)) {
       return;
     }
-    
+
     const element = this.document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });

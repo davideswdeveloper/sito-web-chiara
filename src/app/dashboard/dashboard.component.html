@@ -41,13 +41,14 @@
           <span class="btn-text">Scopri di più</span>
           <span class="btn-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span>
           <span class="btn-glow"></span>
         </a>
-        
-        <a class="btn-hero-secondary" onclick="document.getElementById('contatti').scrollIntoView({ behavior: 'smooth' })">
+
+        <a class="btn-hero-secondary"
+          onclick="document.getElementById('contatti').scrollIntoView({ behavior: 'smooth' })">
           <span class="btn-text">Prenota visita</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -63,16 +64,6 @@
         <div class="stat-item">
           <div class="stat-number">5 ⭐</div>
           <div class="stat-label">Su MioDottore</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">100+</div>
-          <div class="stat-label">Pazienti soddisfatti</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Dedizione</div>
         </div>
       </div>
     </div>
@@ -102,42 +93,53 @@
     <div class="about-content-modern reveal-on-scroll" data-delay="0.1">
       <span class="section-badge-modern">Chi sono</span>
       <h2 class="about-title-modern">
-        Un approccio <span class="gradient-text-inline">empatico</span> alla dermatologia
+        <strong>Dermatologia Clinica e <span class="gradient-text-inline">Salute della Pelle</span></strong>
       </h2>
       <div class="about-text-modern">
-        <p>Sono la Dottoressa <strong>Chiara Del Re</strong>, Dermatologa e Venereologa specializzata nella salute e nel benessere della pelle.</p>
-        <p>Mi dedico con passione alla prevenzione, diagnosi e trattamento delle patologie cutanee, combinando rigore scientifico ed empatia per offrirti un percorso di cura personalizzato e risultati duraturi nel tempo.</p>
+        <p>Sono la Dottoressa <strong>Chiara Del Re</strong>, specialista in Dermatologia e Venereologia.</p>
+        <p>Mi occupo di prevenzione e trattamento delle patologie cutanee offrendo percorsi terapeutici
+          personalizzati, mirati alla risoluzione clinica e al mantenimento della salute della pelle nel tempo.</p>
       </div>
       <div class="about-features-modern">
         <div class="feature-item-modern">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-            <polyline points="22 4 12 14.01 9 11.01"/>
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+            <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+            <path d="M9 14l2 2 4-4" />
           </svg>
-          <span>Approccio personalizzato</span>
+          <span>Protocolli personalizzati</span>
         </div>
         <div class="feature-item-modern">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-            <polyline points="2 17 12 22 22 17"/>
-            <polyline points="2 12 12 17 22 12"/>
+            <ellipse cx="12" cy="12" rx="4" ry="11" />
+            <ellipse cx="12" cy="12" rx="4" ry="11" transform="rotate(60 12 12)" />
+            <ellipse cx="12" cy="12" rx="4" ry="11" transform="rotate(120 12 12)" />
+            <circle cx="12" cy="5" r="1.5" fill="currentColor" stroke="none" />
+            <circle cx="18" cy="16" r="1.5" fill="currentColor" stroke="none" />
+            <circle cx="6" cy="16" r="1.5" fill="currentColor" stroke="none" />
           </svg>
-          <span>Tecnologie avanzate</span>
+          <span>Terapie avanzate</span>
         </div>
         <div class="feature-item-modern">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+            <path d="M8 14h.01" />
+            <path d="M12 14h.01" />
+            <path d="M16 14h.01" />
+            <path d="M8 18h.01" />
+            <path d="M12 18h.01" />
+            <path d="M16 18h.01" />
           </svg>
-          <span>Cura continuativa</span>
+          <span>Monitoraggio clinico</span>
         </div>
       </div>
-      <a href="/Sito-web/chi-sono" class="btn-modern-outline">
+      <a routerLink="/chi-sono" class="btn-modern-outline">
         <span>Scopri di più su di me</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
+          <path d="M5 12h14M12 5l7 7-7 7" />
         </svg>
       </a>
     </div>
@@ -166,18 +168,21 @@
     <div class="focus-grid-modern">
       <div class="focus-card-modern fade-in-up" data-delay="0.1">
         <div class="focus-icon-modern">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <circle cx="12" cy="12" r="6"/>
-            <circle cx="12" cy="12" r="2"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <!-- Scintille (Emoji style) -->
+            <path d="M12 2l1.5 4.5 4.5 1.5-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z" />
+            <path d="M19 14l1 3 3 1-3 1-1 3-1-3-3-1 3-1z" />
+            <path d="M5 17l1 3 3 1-3 1-1 3-1-3-3-1 3-1z" />
           </svg>
         </div>
-        <h3>Acne e impurità</h3>
-        <p>Gestione di acne giovanile e dell'adulto, cicatrici e brufoletti ricorrenti con protocolli mirati</p>
+        <h3>Acne e Cicatrici</h3>
+        <p>Gestione clinica dell'acne in fase attiva (giovanile e adulta) e trattamento specialistico degli esiti
+          cicatriziali post-infiammatori.</p>
         <a href="/Sito-web/servizi" class="focus-link-modern">
           <span>Scopri i percorsi dedicati</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </a>
         <div class="card-hover-glow"></div>
@@ -185,17 +190,19 @@
 
       <div class="focus-card-modern fade-in-up" data-delay="0.2">
         <div class="focus-icon-modern">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 16v-4M12 8h.01"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
         </div>
-        <h3>Macchie, fotoaging e melasma</h3>
-        <p>Valutazione delle discromie cutanee e piani per uniformare il colorito e migliorare la texture</p>
+        <h3>Screening Nevi e Melanoma</h3>
+        <p>Mappatura nevi in videodermatoscopia digitale ed epiluminescenza per la diagnosi precoce del melanoma e dei
+          tumori cutanei non melanocitari</p>
         <a href="/Sito-web/servizi" class="focus-link-modern">
           <span>Approfondisci i trattamenti</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
+            <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
         <div class="card-hover-glow"></div>
@@ -203,32 +210,58 @@
 
       <div class="focus-card-modern fade-in-up" data-delay="0.3">
         <div class="focus-icon-modern">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
-            <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <!-- Capello più arrotondato -->
+            <path d="M12 14 C 12 9, 15 6, 19 2" />
+            <!-- Bulbo/Follicolo -->
+            <path d="M10 15a2 2 0 0 0 4 0c0-1-1-2-1-3h-2c0 1-1 2-1 3z" />
+            <!-- Pelle -->
+            <path d="M4 12h5" />
+            <path d="M15 12h5" />
+            <rect x="4" y="12" width="16" height="8" rx="1" fill="none" class="skin-rect" style="opacity: 0.1" />
           </svg>
         </div>
-        <h3>Nei e prevenzione melanoma</h3>
-        <p>Controllo dei nevi, mappatura e monitoraggio nel tempo per una prevenzione mirata e consapevole</p>
+        <h3>Tricologia e Patologie del Capello</h3>
+        <p>Analisi tricoscopica per la diagnosi e cura di alopecia, effluvi e dermatiti del cuoio capelluto</p>
         <a href="/Sito-web/servizi" class="focus-link-modern">
           <span>Parliamo di prevenzione</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
+            <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
         <div class="card-hover-glow"></div>
       </div>
+
+      <div class="focus-card-modern fade-in-up" data-delay="0.2">
+        <div class="focus-icon-modern">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+        </div>
+        <h3>Patologie Infiammatorie e Autoimmuni</h3>
+        <p>Diagnosi specialistica e gestione di psoriasi, dermatite atopica ed eczemi.</p>
+        <a href="/Sito-web/servizi" class="focus-link-modern">
+          <span>Approfondisci i trattamenti</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <div class="card-hover-glow"></div>
+      </div>
+
     </div>
   </div>
-<br>
-<div class="btn-modern-wrapper">
-  <a href="/servizi" class="btn-modern">
-    <span>Scopri tutti i servizi</span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M5 12h14M12 5l7 7-7 7"/>
-    </svg>
-  </a>
-</div>
+  <br>
+  <div class="btn-modern-wrapper">
+    <a href="/servizi" class="btn-modern">
+      <span>Scopri tutti i servizi</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
 </section>
 
 
@@ -350,27 +383,35 @@
         <div class="visita-flow-card-modern flow-step-card" data-flow-step="1">
           <div class="card-number-modern">01</div>
           <div class="card-icon-modern">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
-          </div>
-          <h3>Invia la tua richiesta</h3>
-          <p>Compila il form indicando il motivo della visita e i principali disturbi cutanei</p>
-          <div class="card-glow-accent"></div>
-        </div>
-        
-        <div class="visita-flow-card-modern flow-step-card" data-flow-step="2">
-          <div class="card-number-modern">02</div>
-          <div class="card-icon-modern">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
               <line x1="16" y1="2" x2="16" y2="6"></line>
               <line x1="8" y1="2" x2="8" y2="6"></line>
               <line x1="3" y1="10" x2="21" y2="10"></line>
             </svg>
           </div>
-          <h3>Programmiamo la visita</h3>
-          <p>Definiamo insieme data, orario e tipologia di visita più adatta a te</p>
+          <h3>Prenotazione dell'appuntamento</h3>
+          <p>Contatto tramite MioDottore, chiamata telefonica o WhatsApp per valutare la richiesta e definire
+            la tipologia di visita più idonea alle necessità del paziente.</p>
+          <div class="card-glow-accent"></div>
+        </div>
+
+        <div class="visita-flow-card-modern flow-step-card" data-flow-step="2">
+          <div class="card-number-modern">02</div>
+          <div class="card-icon-modern">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+              <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+              <path d="M9 14h6"></path>
+              <path d="M9 18h6"></path>
+              <path d="M9 10h6"></path>
+            </svg>
+          </div>
+          <h3>Anamnesi e Valutazione</h3>
+          <p>Prima fase della visita dedicata alla raccolta della storia clinica e alla valutazione dello
+            stato generale di salute.</p>
           <div class="card-glow-accent"></div>
         </div>
       </div>
@@ -378,27 +419,19 @@
       <div class="visita-flow-center-modern">
         <div class="flow-image-container-modern">
           <div class="image-frame-modern">
-            <img src="assets/images/herohome2.png"
-                 alt="Prenotazione visita dermatologica"
-                 class="visita-flow-main-image is-active"
-                 data-flow-step="1">
-            <img src="assets/images/herohome.jpg"
-                 alt="Valutazione clinica della pelle"
-                 class="visita-flow-main-image"
-                 data-flow-step="2">
-            <img src="assets/images/primo.png"
-                 alt="Piano di trattamento personalizzato"
-                 class="visita-flow-main-image"
-                 data-flow-step="3">
-            <img src="assets/images/piramide1.png"
-                 alt="Controlli e follow-up dermatologico"
-                 class="visita-flow-main-image"
-                 data-flow-step="4">
-            
+            <img src="assets/images/comeFunziona1.png" alt="Prenotazione visita dermatologica"
+              class="visita-flow-main-image" data-flow-step="1">
+            <img src="assets/images/comeFunziona2.jpg" alt="Valutazione clinica della pelle"
+              class="visita-flow-main-image" data-flow-step="2">
+            <img src="assets/images/comeFunziona3.jpg" alt="Esame obiettivo e diagnosi" class="visita-flow-main-image"
+              data-flow-step="3">
+            <img src="assets/images/comeFunziona4.jpg" alt="Protocollo terapeutico" class="visita-flow-main-image"
+              data-flow-step="4">
+
             <div class="image-gradient-overlay"></div>
             <div class="image-border-glow"></div>
           </div>
-          
+
           <!-- Progress indicator -->
           <div class="flow-progress-indicator">
             <div class="progress-dot" data-step="1"></div>
@@ -413,27 +446,34 @@
         <div class="visita-flow-card-modern flow-step-card" data-flow-step="3">
           <div class="card-number-modern">03</div>
           <div class="card-icon-modern">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
           </div>
-          <h3>Descriviamo la tua pelle</h3>
-          <p>Analizziamo nel dettaglio pelle, unghie e cuoio capelluto per la diagnosi</p>
+          <h3>Esame Obiettivo e Diagnosi</h3>
+          <p>Ispezione clinica accurata della cute e degli annessi per identificare la patologia o l'inestetismo.</p>
           <div class="card-glow-accent"></div>
         </div>
-        
+
         <div class="visita-flow-card-modern flow-step-card" data-flow-step="4">
           <div class="card-number-modern">04</div>
           <div class="card-icon-modern">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="12" y1="18" x2="12" y2="12"/>
-              <line x1="9" y1="15" x2="15" y2="15"/>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <!-- Capsule 1 -->
+              <rect x="1" y="4" width="12" height="6" rx="3" transform="rotate(-45 7 7)" />
+              <line x1="7" y1="4" x2="7" y2="10" transform="rotate(-45 7 7)" />
+
+              <!-- Capsule 2 -->
+              <rect x="11" y="14" width="12" height="6" rx="3" transform="rotate(-45 17 17)" />
+              <line x1="17" y1="14" x2="17" y2="20" transform="rotate(-45 17 17)" />
             </svg>
           </div>
-          <h3>Ricevi il tuo piano</h3>
-          <p>Indicazioni chiare su terapia, prodotti e controlli con follow-up dedicato</p>
+          <h3>Protocollo Terapeutico</h3>
+          <p>Definizione del percorso di cura personalizzato, prescrizione farmacologica e pianificazione dei controlli
+            successivi.</p>
           <div class="card-glow-accent"></div>
         </div>
       </div>
@@ -464,7 +504,7 @@
       <article class="story-card-modern fade-in-up" data-delay="0.1">
         <div class="quote-icon-modern">
           <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
           </svg>
         </div>
         <p class="story-text-modern">
@@ -474,8 +514,8 @@
         <div class="story-footer-modern">
           <div class="story-avatar-modern">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
             </svg>
           </div>
           <div class="story-author-modern">
@@ -489,7 +529,7 @@
       <article class="story-card-modern fade-in-up" data-delay="0.2">
         <div class="quote-icon-modern">
           <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
           </svg>
         </div>
         <p class="story-text-modern">
@@ -498,8 +538,8 @@
         <div class="story-footer-modern">
           <div class="story-avatar-modern">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
             </svg>
           </div>
           <div class="story-author-modern">
@@ -513,18 +553,19 @@
       <article class="story-card-modern fade-in-up" data-delay="0.3">
         <div class="quote-icon-modern">
           <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
           </svg>
         </div>
         <p class="story-text-modern">
-          Avevo la pelle molto sensibile e reattiva. Con piccoli cambiamenti e una terapia mirata, arrossamenti e prurito
+          Avevo la pelle molto sensibile e reattiva. Con piccoli cambiamenti e una terapia mirata, arrossamenti e
+          prurito
           sono nettamente diminuiti.
         </p>
         <div class="story-footer-modern">
           <div class="story-avatar-modern">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
             </svg>
           </div>
           <div class="story-author-modern">
@@ -539,7 +580,8 @@
     <button type="button" class="btn-cta-review" (click)="apriRecensioni()">
 
       <span>Scopri cosa dicono di me</span>
-    </button>  </div>
+    </button>
+  </div>
 </section>
 
 
@@ -547,12 +589,12 @@
   <div class="cta-container-modern reveal-on-scroll" data-delay="0.1">
     <div class="cta-decoration cta-decoration--left"></div>
     <div class="cta-decoration cta-decoration--right"></div>
-    
+
     <div class="cta-content-modern">
       <div class="cta-icon-modern">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-          <polyline points="22 4 12 14.01 9 11.01"/>
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
         </svg>
       </div>
       <h2 class="cta-title-modern">
@@ -560,7 +602,7 @@
         <span class="gradient-text-inline">a partire da oggi</span>
       </h2>
       <p class="cta-subtitle-modern">
-        Se hai dubbi, problematiche dermatologiche o semplicemente vuoi fare prevenzione, 
+        Se hai dubbi, problematiche dermatologiche o semplicemente vuoi fare prevenzione,
         una visita dermatologica può fare la differenza
       </p>
       <div class="cta-actions-modern">
@@ -575,13 +617,14 @@
         </a>
         <button type="button" class="btn-cta-secondary" (click)="scriviWhatsApp()">
           <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
           </svg>
           <span>Scrivimi su WhatsApp</span>
         </button>
       </div>
     </div>
-    
+
     <div class="cta-particles">
       <div class="cta-particle"></div>
       <div class="cta-particle"></div>
