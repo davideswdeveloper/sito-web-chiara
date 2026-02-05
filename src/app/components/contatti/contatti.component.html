@@ -96,6 +96,7 @@
             <span class="minimal-arrow">→</span>
           </div>
 
+
           <div class="minimal-action-card whatsapp-card" (click)="scriviWhatsApp()">
             <div class="minimal-icon-whatsapp">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
@@ -107,14 +108,28 @@
               <h3>WhatsApp</h3>
               <p>Risposta immediata</p>
             </div>
+
             <span class="minimal-arrow">→</span>
           </div>
         </div>
+        <div style="margin: 1rem 0; text-align: center;">
+          <div class="privacy-checkbox-container"
+            style="display: flex; align-items: center; justify-content: start; gap: 8px; color: var(--text-color, #333);">
+            <input type="checkbox" id="privacy-policy-whatsapp" style="width: 16px; height: 16px; cursor: pointer;">
+            <label for="privacy-policy-whatsapp"
+              style="font-size: 0.9rem; cursor: pointer; color: inherit; text-align: left; line-height: 1.2;">
+              Accetto la <a href="/privacy-policy" target="_blank"
+                style="text-decoration: underline; color: inherit;">Privacy Policy</a><br>
+              <span style="font-size: 0.8rem; opacity: 0.8;">(necessario per WhatsApp)</span>
+            </label>
+          </div>
+        </div>
+
       </div>
 
       <div class="form-glass-container">
         <h3 class="form-modern-title">Invia un messaggio</h3>
-        <form ngNoForm action="https://formsubmit.co/delre.dermatologa@gmail.com" method="POST" target="_blank"
+        <form action="https://formsubmit.co/delre.dermatologa@gmail.com" method="POST" target="_blank"
           class="modern-contact-form">
           <div class="input-row">
             <div class="input-group">
@@ -167,7 +182,7 @@
         
         <label class="checkbox-inline">
           <input type="checkbox" name="privacy" required>
-          Ho letto e accetto la <a href="/Sito-web/privacy-policy" target="_blank">Privacy Policy</a>
+          Ho letto e accetto la <a href="/privacy-policy" target="_blank">Privacy Policy</a>
         </label>
         
         <input type="hidden" name="_subject" value="Nuovo messaggio dal sito">

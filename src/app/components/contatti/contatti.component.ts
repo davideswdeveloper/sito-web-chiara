@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 interface Location {
@@ -46,20 +46,33 @@ export class ContattiComponent {
     message: ''
   };
 
+  constructor(
+    @Inject(DOCUMENT) private document: Document
+  ) { }
+
   prenotaVisita() {
     window.open('https://www.miodottore.it/chiara-del-re-2/dermatologo', '_blank');
   }
-  
+
   scriviWhatsApp() {
+    // Checkbox specifico per il bottone WhatsApp
+    const privacyCheckbox = this.document.querySelector<HTMLInputElement>('#privacy-policy-whatsapp');
+
+    if (!privacyCheckbox?.checked) {
+      alert('Devi accettare la Privacy Policy per scrivere su WhatsApp!');
+      return;
+    }
+
     const phone = '393793162089';
-    const nome = this.formData.name;
+    const nome = this.formData.name || 'Paziente';
     const email = this.formData.email ? ` Email: ${this.formData.email}.` : '';
-    const messaggio = this.formData.message || '';
-    if(this.formData.name){
+    const messaggio = this.formData.message || 'Vorrei richiedere informazioni.';
+
+    if (this.formData.name || this.formData.message) {
       const testo = `Ciao, sono ${nome}. Ti contatto per: ${messaggio}.${email}`;
       window.open(`https://wa.me/${phone}?text=${encodeURIComponent(testo)}`, '_blank');
-    }else{
-      const testo = `Ciao! Ti contatto per: ${messaggio}.${email}`;
+    } else {
+      const testo = `Ciao! Vorrei richiedere informazioni.`;
       window.open(`https://wa.me/${phone}?text=${encodeURIComponent(testo)}`, '_blank');
     }
   }

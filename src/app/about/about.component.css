@@ -112,10 +112,11 @@
   z-index: 2;
   max-width: 1400px;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .hero-text-wrapper {
@@ -123,11 +124,12 @@
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(3rem, 6vw, 6rem);
   font-weight: 300;
   line-height: 1.2;
   margin-bottom: 24px;
   color: var(--text-dark);
+  text-align: center;
 }
 
 .title-line {
@@ -585,6 +587,9 @@
   transition: all 0.3s ease;
   opacity: 0;
   animation: fadeInUp 0.6s ease-out forwards;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .study-card:nth-child(1) {
@@ -615,6 +620,8 @@
   justify-content: center;
   color: var(--primary-color);
   transition: transform 0.3s ease;
+  flex-shrink: 0;
+  /* Prevent icon from shrinking */
 }
 
 .study-card:hover .study-icon {
@@ -627,9 +634,10 @@
   margin-bottom: 16px;
   font-weight: 600;
   min-height: 7rem;
-  /* Increased to accommodate 3-4 lines of text */
+  /* Ensure space for 3-4 lines */
   display: flex;
   align-items: center;
+  /* Align text to center */
   justify-content: center;
 }
 

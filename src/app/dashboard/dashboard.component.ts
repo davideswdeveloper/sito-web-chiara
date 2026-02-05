@@ -141,7 +141,7 @@ export class DashboardComponent implements AfterViewInit {
     const messaggio = messageInput?.value || '';
 
     const testo = `Ciao, sono ${nome}. Ti contatto per: ${messaggio}.${email}`;
-    const phone = '393295840904';
+    const phone = '393793162089';
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(testo)}`, '_blank');
   }
 

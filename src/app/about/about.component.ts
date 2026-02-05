@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
 import { Component, HostListener, AfterViewInit, OnDestroy, ElementRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -13,7 +13,7 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
   private observer?: IntersectionObserver;
   private scrollHandler?: () => void;
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef) { }
 
   ngAfterViewInit(): void {
     this.setupScrollAnimations();
@@ -74,7 +74,7 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
    */
   private setupSmoothScroll(): void {
     const scrollLinks = this.el.nativeElement.querySelectorAll('a[href^="#"]');
-    
+
     scrollLinks.forEach((link: HTMLAnchorElement) => {
       link.addEventListener('click', (e: Event) => {
         const href = link.getAttribute('href');
@@ -82,11 +82,11 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
           e.preventDefault();
           const targetId = href.substring(1);
           const targetElement = document.getElementById(targetId);
-          
+
           if (targetElement) {
             const offset = 100; // Offset per il header
             const targetPosition = targetElement.offsetTop - offset;
-            
+
             window.scrollTo({
               top: targetPosition,
               behavior: 'smooth'
@@ -104,11 +104,11 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
   onScroll(): void {
     const scrolled = window.pageYOffset;
     const parallaxElements = this.el.nativeElement.querySelectorAll('.section-background, .section-background-alt');
-    
+
     parallaxElements.forEach((el: HTMLElement) => {
       const rect = el.getBoundingClientRect();
       const speed = 0.5;
-      
+
       if (rect.top < window.innerHeight && rect.bottom > 0) {
         const yPos = -(scrolled * speed);
         el.style.transform = `translateY(${yPos}px)`;
@@ -140,7 +140,7 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
     if (scrollIndicator) {
       const scrolled = window.pageYOffset;
       const windowHeight = window.innerHeight;
-      
+
       if (scrolled > windowHeight * 0.3) {
         scrollIndicator.style.opacity = '0';
         scrollIndicator.style.transition = 'opacity 0.3s ease';

@@ -1,63 +1,136 @@
 <section class="legal">
   <div class="container">
     <h1>Cookie Policy</h1>
-    <p><em>Ultimo aggiornamento: Agosto 2025</em></p>
+    <p><em>Ultimo aggiornamento: Novembre 2025</em></p>
+
     <p>
-      Questo sito utilizza cookie tecnici necessari al funzionamento e, previo consenso,
-      cookie statistici anonimizzati per comprendere l’uso delle pagine. 
-      Non utilizziamo cookie di profilazione.
+      Questo sito utilizza cookie tecnici necessari al funzionamento e, previo consenso, cookie/strumenti statistici e
+      di terze parti per funzionalità esterne. Non utilizziamo cookie di profilazione. Il consenso può essere prestato,
+      rifiutato o revocato in qualsiasi momento dal pannello “Preferenze cookie”.
     </p>
 
     <h2>Cosa sono i cookie</h2>
     <p>
-      I cookie sono piccoli file di testo che il sito invia al dispositivo dell’utente e che vengono letti successivamente per diverse finalità.
+      I cookie sono piccoli file di testo inviati dal sito al dispositivo dell’utente e letti successivamente per
+      diverse finalità; tecnologie assimilate (es. script, local storage, pixel) rientrano nella nozione di “Strumenti
+      di Tracciamento” ove pertinente.
     </p>
 
     <h2>Tipi di cookie utilizzati</h2>
     <ul>
-      <li><strong>Cookie tecnici</strong>: essenziali per navigazione e sicurezza.</li>
-      <li><strong>Cookie di preferenza</strong>: memorizzano la scelta dell’utente in merito ai cookie.</li>
-      <li><strong>Cookie statistici anonimizzati</strong>: attivati solo con consenso, servono per analisi aggregate (es. Google Analytics anonimizzato).</li>
-      <li><strong>Cookie di terze parti</strong>: solo se utilizzi servizi esterni incorporati, come Google Maps (iframe).</li>
+      <li><strong>Cookie tecnici necessari</strong>: garantiscono navigazione, sicurezza, bilanciamento carichi,
+        prevenzione abusi. Attivi senza consenso.</li>
+      <li><strong>Cookie di preferenza</strong>: memorizzano la scelta dell’utente in merito ai cookie e alla lingua.
+        Attivi senza consenso se strettamente necessari.</li>
+      <li><strong>Statistici anonimizzati/pseudonimizzati</strong>: attivi solo con consenso; es. Google Analytics
+        configurato con IP mascherato dove applicabile.</li>
+      <li><strong>Terze parti per contenuti esterni</strong>: attivi solo con consenso quando si usano risorse
+        incorporate (es. mappe in iframe); non si attivano in caso di semplici link esterni.</li>
     </ul>
 
-    <h2>Google Maps</h2>
+    <h2>Strumenti e servizi di terze parti</h2>
+
+    <h3>Cloudflare (CDN/protezione)</h3>
     <p>
-      Questo sito può includere un collegamento a Google Maps per facilitare la localizzazione dello studio. 
-      Se viene usato un semplice link che apre la mappa in una nuova scheda, non vengono installati cookie sul sito. 
-      In caso di mappa incorporata tramite iframe, Google può installare cookie secondo la propria informativa.
+      Servizio per caching, sicurezza e mitigazione DDoS.<br>
+      Dati: cookie tecnici, indirizzo IP, user agent, richieste HTTP.<br>
+      Cookie tipici e durata: cf_clearance ~30 minuti; _cfuvid variabile.<br>
+      Luogo: USA / rete globale.
     </p>
+
+    <h3>Font Awesome (via cdnjs.cloudflare.com)</h3>
     <p>
-      Maggiori info: <a href="https://policies.google.com/technologies/cookies" target="_blank">
-      policies.google.com/technologies/cookies</a>
+      Caricamento di icon set tramite CDN.<br>
+      Dati: richieste CDN, Dati di utilizzo, eventuali cookie tecnici.<br>
+      Luogo: USA.
+    </p>
+
+    <h3>GitHub Pages (hosting)</h3>
+    <p>
+      Servizio di hosting statico.<br>
+      Dati: log tecnici e richieste HTTP.<br>
+      Cookie: generalmente non necessari lato utente per la semplice fruizione del sito statico.<br>
+      Luogo: USA.
+    </p>
+
+    <h3>Google Analytics (se attivato con consenso)</h3>
+    <p>
+      Servizio di analisi web per statistiche aggregate.<br>
+      Informativa: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy</a> –
+      <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener noreferrer">Cookie</a> –
+      <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Opt‑out</a>
+    </p>
+
+    <h3>Google Maps</h3>
+    <p>
+      Localizzazione dello studio.<br>
+      Se link esterno, non vengono impostati cookie su questo sito; se iframe, Google può impostare cookie secondo la
+      propria policy.<br>
+      Informativa: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy</a> –
+      <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener noreferrer">Cookie</a>
+    </p>
+
+    <h3>FormSubmit</h3>
+    <p>
+      Invio dei messaggi del modulo contatti.<br>
+      Informativa: <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">Privacy</a>
+    </p>
+
+    <h3>Supabase (se integrato)</h3>
+    <p>
+      Backend/API per dati e autenticazione.<br>
+      Dati: local/session storage per sessione, eventuali cookie tecnici se configurati, log accessi.<br>
+      Luogo: USA/UE in base alla regione del progetto.
+    </p>
+
+    <h2>Base giuridica</h2>
+    <p>
+      Cookie necessari e di preferenza: legittimo interesse del Titolare a garantire funzionalità essenziali e
+      memorizzare la scelta sui cookie. Cookie statistici e di terze parti: consenso dell’utente, liberamente revocabile
+      dal pannello “Preferenze cookie”.
     </p>
 
     <h2>Gestione del consenso</h2>
     <p>
-      Puoi modificare in qualsiasi momento le preferenze tramite il banner di consenso o riaprendolo con il pulsante qui sotto.
+      Banner iniziale con categorie e scelte “Accetta tutto”, “Rifiuta non necessari”, “Personalizza”. Il pannello è
+      sempre accessibile in basso a sinistra.
     </p>
     <button type="button" (click)="openConsent()">Gestisci preferenze cookie</button>
 
-    <h2>Base giuridica</h2>
+    <h2>Durata</h2>
+    <ul>
+      <li><strong>Tecnici</strong>: sessione o fino a 12 mesi in base alla funzione.</li>
+      <li><strong>Preferenza consenso</strong>: fino a 12 mesi.</li>
+      <li><strong>Cloudflare</strong>: cf_clearance ~30 minuti; _cfuvid variabile.</li>
+      <li><strong>Statistici/terze parti</strong>: secondo le informative dei rispettivi fornitori e la configurazione
+        adottata.</li>
+    </ul>
+
+    <h2>Come controllare ed eliminare i cookie</h2>
     <p>
-      I cookie tecnici vengono utilizzati per il legittimo interesse del titolare a garantire il corretto funzionamento del sito. 
-      I cookie statistici e quelli di terze parti (es. Google Maps incorporata) vengono utilizzati solo previo consenso dell’utente.
+      Dal pannello “Preferenze cookie” di questo sito e dalle impostazioni del browser per visualizzare, bloccare o
+      cancellare cookie e tecnologie affini; le impostazioni del browser non offrono consenso granulare per categoria.
     </p>
 
-    <h2>Durata</h2>
+    <h2>Conseguenze del rifiuto</h2>
     <p>
-      I cookie hanno una durata variabile. I cookie di preferenza per il consenso possono durare fino a 12 mesi.
+      Il rifiuto dei cookie non necessari può limitare funzionalità non essenziali (es. mappe incorporate o
+      statistiche), ma non impedisce l’uso delle funzionalità di base del sito.
     </p>
 
     <h2>Titolare del trattamento</h2>
     <p>
-      Chiara Del Re – [indirizzo studio] – nutrizionista.rasomariapia&#64;gmail.com– 18028691006
+      <strong>Dott.ssa Chiara Del Re</strong><br>
+      Sedi: Palmi, Reggio Calabria, Falerna, Caraffa di Catanzaro (vedi <a routerLink="/privacy-policy">Privacy
+        Policy</a>)<br>
+      Email: <a href="mailto:delre.dermatologa&#64;gmail.com">delre.dermatologa&#64;gmail.com</a><br>
+      P.IVA: 03344790807
     </p>
 
     <h2>Ulteriori informazioni</h2>
     <p>
-      Per maggiori dettagli sul trattamento dei dati personali consulta la nostra 
-      <a href="/privacy-policy">Privacy Policy</a>.
+      Per maggiori dettagli sul trattamento dei dati personali, comprese basi giuridiche, trasferimenti e diritti,
+      consulta la <a routerLink="/privacy-policy">Privacy Policy</a>.
     </p>
   </div>
 </section>
