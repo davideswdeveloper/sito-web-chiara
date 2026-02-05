@@ -92,12 +92,16 @@
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
+
   33% {
     transform: translate(30px, -30px) scale(1.1);
   }
+
   66% {
     transform: translate(-20px, 20px) scale(0.9);
   }
@@ -126,11 +130,11 @@
   color: var(--text-dark);
 }
 
-    .title-line {
-    display: block;
-    opacity: 0;
-    animation: slideInLeft 0.8s ease-out forwards;
-    }
+.title-line {
+  display: block;
+  opacity: 0;
+  animation: slideInLeft 0.8s ease-out forwards;
+}
 
 .title-line:nth-child(1) {
   animation-delay: 0.2s;
@@ -151,13 +155,15 @@
 
 
 .highlight {
-    color: #e57373; /* Ora funzionerà */
-    font-weight: 700;
-    display: block; /* Aggiunto per l'animazione se necessario */
-    opacity: 0;
-    animation: slideInLeft 0.8s ease-out forwards;
-    animation-delay: 0.4s;
-  }
+  color: #e57373;
+  /* Ora funzionerà */
+  font-weight: 700;
+  display: block;
+  /* Aggiunto per l'animazione se necessario */
+  opacity: 0;
+  animation: slideInLeft 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
 
 
 .hero-subtitle {
@@ -166,6 +172,7 @@
   margin-bottom: 40px;
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.8s forwards;
+  text-align: center;
 }
 
 .hero-cta {
@@ -198,9 +205,12 @@
 }
 
 @keyframes bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(5px);
   }
@@ -232,10 +242,13 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.3;
     transform: translate(-50%, -50%) scale(1);
   }
+
   50% {
     opacity: 0.5;
     transform: translate(-50%, -50%) scale(1.1);
@@ -270,10 +283,13 @@
 }
 
 @keyframes borderPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.3;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.6;
     transform: scale(1.05);
@@ -313,6 +329,7 @@
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
+
   100% {
     opacity: 0;
     transform: translateX(-50%) translateY(20px);
@@ -398,6 +415,7 @@
   from {
     width: 0;
   }
+
   to {
     width: 80px;
   }
@@ -492,7 +510,7 @@
   border-radius: 30px;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  
+
 }
 
 .image-wrapper-modern img {
@@ -542,6 +560,7 @@
   0% {
     transform: translateX(-100%) translateY(-100%) rotate(45deg);
   }
+
   100% {
     transform: translateX(100%) translateY(100%) rotate(45deg);
   }
@@ -607,6 +626,11 @@
   color: var(--text-dark);
   margin-bottom: 16px;
   font-weight: 600;
+  min-height: 7rem;
+  /* Increased to accommodate 3-4 lines of text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .study-card p {
@@ -650,93 +674,96 @@
 /* ============================================
    METHOD SECTION - REFINED NARRATIVE
    ============================================ */
-   .method-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px; /* Spazio ampio per un look moderno */
-    align-items: center;
-    max-width: 1200px;
+.method-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  /* Spazio ampio per un look moderno */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Immagine con bordo stilizzato */
+.method-image-wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+  /* Effetto leggero di rotazione per dinamismo */
+  transform: rotate(-1deg);
+}
+
+.method-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.method-image-wrapper:hover img {
+  transform: scale(1.05) rotate(1deg);
+}
+
+/* Tipografia del testo */
+.method-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.method-badge {
+  display: inline-block;
+  width: max-content;
+  padding: 8px 16px;
+  background: rgba(var(--primary-rgb), 0.1);
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+
+.method-description p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  /* Aumenta la leggibilità dei blocchi lunghi */
+  color: var(--text-light);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Aggiunge un tocco di design: una linea verticale accanto al testo */
+.method-description {
+  border-left: 3px solid var(--primary-color);
+  padding-left: 30px;
+}
+
+.method-signature {
+  font-family: 'Playfair Display', serif;
+  /* O un font elegante a tua scelta */
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-dark);
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .method-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: left;
+  }
+
+  .method-image {
+    max-width: 80%;
     margin: 0 auto;
-    padding: 60px 20px;
   }
-  
-  /* Immagine con bordo stilizzato */
-  .method-image-wrapper {
-    position: relative;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
-    /* Effetto leggero di rotazione per dinamismo */
-    transform: rotate(-1deg); 
-  }
-  
-  .method-image-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.5s ease;
-  }
-  
-  .method-image-wrapper:hover img {
-    transform: scale(1.05) rotate(1deg);
-  }
-  
-  /* Tipografia del testo */
-  .method-text-container {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-  
-  .method-badge {
-    display: inline-block;
-    width: max-content;
-    padding: 8px 16px;
-    background: rgba(var(--primary-rgb), 0.1);
-    color: var(--primary-color);
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    border-radius: 50px;
-    margin-bottom: 10px;
-  }
-  
-  .method-description p {
-    font-size: 1.15rem;
-    line-height: 1.8; /* Aumenta la leggibilità dei blocchi lunghi */
-    color: var(--text-light);
-    margin-bottom: 20px;
-    position: relative;
-  }
-  
-  /* Aggiunge un tocco di design: una linea verticale accanto al testo */
-  .method-description {
-    border-left: 3px solid var(--primary-color);
-    padding-left: 30px;
-  }
-  
-  .method-signature {
-    font-family: 'Playfair Display', serif; /* O un font elegante a tua scelta */
-    font-size: 1.2rem;
-    font-style: italic;
-    color: var(--text-dark);
-    margin-top: 10px;
-  }
-  
-  /* Responsive */
-  @media (max-width: 992px) {
-    .method-content {
-      grid-template-columns: 1fr;
-      gap: 50px;
-      text-align: left;
-    }
-    
-    .method-image {
-      max-width: 80%;
-      margin: 0 auto;
-    }
-  }
+}
 
 /* ============================================
    CTA SECTION
@@ -761,16 +788,19 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
   animation: patternMove 20s infinite ease-in-out;
 }
 
 @keyframes patternMove {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0);
   }
+
   50% {
     transform: translate(20px, -20px);
   }
@@ -850,6 +880,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -861,6 +892,7 @@
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -872,6 +904,7 @@
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -883,6 +916,7 @@
     opacity: 0;
     transform: translateX(-50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -907,6 +941,7 @@
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 1024px) {
+
   .hero-content,
   .content-grid,
   .method-content {
@@ -947,8 +982,11 @@
   }
 
   .hero-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.3rem;
-    margin-bottom: 24px;
+    margin: 0;
   }
 
   .hero-cta {

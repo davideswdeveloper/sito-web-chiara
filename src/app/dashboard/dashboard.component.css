@@ -1784,6 +1784,11 @@
   font-weight: 700;
   color: #22223b;
   margin: 0 0 12px 0;
+  min-height: 7rem;
+  /* Increased to accommodate 3-4 lines of text */
+  display: flex;
+  align-items: center;
+  /* Vertically center the text if short */
 }
 
 .focus-card-modern p {
@@ -2230,6 +2235,7 @@
 }
 
 @media (max-width: 768px) {
+
   /* About Section */
   .about-section-modern {
     padding: 60px 16px;
@@ -2428,6 +2434,7 @@
 }
 
 @media (max-width: 480px) {
+
   /* About Section */
   .about-section-modern {
     padding: 40px 12px;
