@@ -1084,7 +1084,8 @@
   }
 
   .minimal-icon,
-  .minimal-icon-whatsapp {
+  .minimal-icon-whatsapp,
+  .minimal-icon-instagram {
     width: 48px;
     height: 48px;
     border-radius: 14px;
@@ -1177,14 +1178,16 @@
   }
 
   .minimal-icon,
-  .minimal-icon-whatsapp {
+  .minimal-icon-whatsapp,
+  .minimal-icon-instagram {
     width: 44px;
     height: 44px;
     border-radius: 12px;
     margin-right: 12px;
   }
 
-  .minimal-icon-whatsapp svg {
+  .minimal-icon-whatsapp svg,
+  .minimal-icon-instagram svg {
     width: 26px;
     height: 26px;
   }
@@ -1280,4 +1283,51 @@
 /* Freccia verde al passaggio */
 .whatsapp-card:hover .minimal-arrow {
   color: #25D366;
+}
+
+/* Card Instagram specifica */
+.instagram-card {
+  transition: all 0.4s ease;
+  border-color: rgba(225, 48, 108, 0.2) !important;
+}
+
+/* Icona Instagram */
+.minimal-icon-instagram {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-right: 20px;
+  box-shadow: 0 4px 10px rgba(225, 48, 108, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.minimal-icon-instagram svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Effetto al passaggio del mouse (Hover) */
+.instagram-card:hover {
+  background-color: #fff0f5;
+  border-color: #e1306c !important;
+  transform: translateX(10px);
+}
+
+.instagram-card:hover .minimal-icon-instagram {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 15px rgba(225, 48, 108, 0.4);
+}
+
+.instagram-card:hover .minimal-text h3 {
+  color: #c13584;
+}
+
+/* Freccia rosa/rossa al passaggio */
+.instagram-card:hover .minimal-arrow {
+  color: #e1306c;
 }

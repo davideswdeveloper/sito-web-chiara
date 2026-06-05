@@ -77,6 +77,10 @@ export class ContattiComponent {
     }
   }
 
+  apriInstagram() {
+    window.open('https://www.instagram.com/delre.dermatologa/', '_blank');
+  }
+
   portamiQui(address: string) {
     const location = this.locations.find(l => l.address === address);
     if (location) {
